@@ -45,16 +45,16 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
     "@playwright/test": "^1.55.0",
-    "@types/node": "^22.0.0",
+    "@types/node": "^26.6.4",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.186.0",
     "lighthouse": "^13.0.0",
-    "oxfmt": "^0.71.0",
-    "oxlint": "^1.86.0",
-    "typescript": "^5.9.0",
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
+    "typescript": "^7.0.2",
     "vitepress": "1.6.4",
-    "vue": "3.5.39"
+    "vue": "3.5.43"
   },
   "engines": {
     "node": ">=24.14.1 <25"
