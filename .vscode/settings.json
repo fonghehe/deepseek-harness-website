@@ -1,0 +1,56 @@
+{
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.mdc": "markdown"
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "files.exclude": {
+    ".next": true,
+    "public/docs": true,
+    "docs/.vitepress/cache": true,
+    "docs/.vitepress/dist": true,
+    "**/*.tsbuildinfo": true,
+    ".pages-build": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/public/docs/**": true,
+    "**/docs/.vitepress/cache/**": true,
+    "**/docs/.vitepress/dist/**": true,
+    "**/test-results/**": true,
+    "**/playwright-report/**": true,
+    "**/.pages-build/**": true,
+    "**/out/**": true
+  },
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/public/docs/**": true,
+    "**/docs/.vitepress/cache/**": true,
+    "**/docs/.vitepress/dist/**": true,
+    "**/test-results/**": true,
+    "**/playwright-report/**": true,
+    "**/pnpm-lock.yaml": true,
+    "**/.pages-build/**": true,
+    "**/out/**": true
+  },
+  "editor.formatOnSaveMode": "file",
+  "oxc.enable.oxlint": true,
+  "oxc.enable.oxfmt": true,
+  "oxc.requireConfig": true
+}

@@ -1,0 +1,184 @@
+{
+  "en": {
+    "overview": "How the DeepSeek Harness website is built, organized and tested.",
+    "architecture": "React components, Next.js routes, animation playback and VitePress delivery.",
+    "highlights": "Implementation notes on controls, languages, animation, SEO and assets.",
+    "requirements": "Checks for layout, navigation, accessibility, deployment and performance.",
+    "learning": "Source-reading steps and six exercises for this website."
+  },
+  "zh": {
+    "overview": "DeepSeek Harness 复刻网站的页面结构、实现方式和测试方法。",
+    "architecture": "React 组件、Next.js 路由、动画播放和 VitePress 文档交付。",
+    "highlights": "页面控件、多语言、动画、SEO 和资源管理的实现说明。",
+    "requirements": "布局、导航、无障碍、部署和性能的检查清单。",
+    "learning": "源码阅读顺序，以及六个网站修改与验证练习。"
+  },
+  "ja": {
+    "overview": "DeepSeek Harness を再現したサイトの構成、実装、テスト方法。",
+    "architecture": "React のコンポーネント、Next.js のルート、アニメーション、VitePress の配信。",
+    "highlights": "操作、言語、アニメーション、SEO、リソース管理の実装例。",
+    "requirements": "レイアウト、操作、アクセシビリティ、公開、性能の確認項目。",
+    "learning": "ソースを読む順序と、変更を確認する六つの実習。"
+  },
+  "fr": {
+    "overview": "Structure, réalisation et tests du site reproduisant DeepSeek Harness.",
+    "architecture": "Composants React, routes Next.js, animations et diffusion avec VitePress.",
+    "highlights": "Notes sur les contrôles, les langues, les animations, le SEO et les ressources.",
+    "requirements": "Vérifications de la mise en page, de la navigation, de l’accessibilité et du déploiement.",
+    "learning": "Ordre de lecture du code et six exercices de modification et de vérification."
+  },
+  "de": {
+    "overview": "Aufbau, Umsetzung und Tests der nachgebildeten DeepSeek-Harness-Website.",
+    "architecture": "React-Komponenten, Next.js-Routen, Animationen und VitePress-Auslieferung.",
+    "highlights": "Hinweise zu Bedienelementen, Sprachen, Animationen, SEO und Ressourcen.",
+    "requirements": "Prüfungen für Layout, Navigation, Barrierefreiheit, Veröffentlichung und Leistung.",
+    "learning": "Reihenfolge zum Lesen des Codes und sechs Übungen zum Ändern und Prüfen."
+  },
+  "ko": {
+    "overview": "DeepSeek Harness 재현 사이트의 구조, 구현, 테스트 방법.",
+    "architecture": "React 컴포넌트, Next.js 경로, 애니메이션 재생, VitePress 문서 제공.",
+    "highlights": "컨트롤, 언어, 애니메이션, SEO, 리소스 관리의 구현 설명.",
+    "requirements": "레이아웃, 탐색, 접근성, 배포, 성능 확인 항목.",
+    "learning": "소스 읽기 순서와 사이트 변경 및 검증을 위한 여섯 실습."
+  },
+  "ru": {
+    "overview": "Устройство, реализация и тесты сайта, воссоздающего DeepSeek Harness.",
+    "architecture": "Компоненты React, маршруты Next.js, анимации и доставка статей VitePress.",
+    "highlights": "Заметки об элементах управления, языках, анимации, SEO и ресурсах.",
+    "requirements": "Проверки макета, навигации, доступности, публикации и производительности.",
+    "learning": "Порядок чтения кода и шесть упражнений по изменению и проверке сайта."
+  },
+  "ar": {
+    "overview": "بنية الموقع المعاد إنشاؤه لـ DeepSeek Harness وتنفيذه واختباره.",
+    "architecture": "مكونات React ومسارات Next.js وتشغيل الحركة وتسليم وثائق VitePress.",
+    "highlights": "ملاحظات تنفيذ عناصر التحكم واللغات والحركة وSEO والموارد.",
+    "requirements": "فحوص التخطيط والتنقل وإمكانية الوصول والنشر والأداء.",
+    "learning": "ترتيب قراءة الشيفرة وستة تمارين لتعديل الموقع والتحقق منه."
+  },
+  "es": {
+    "overview": "Estructura, implementación y pruebas del sitio que recrea DeepSeek Harness.",
+    "architecture": "Componentes React, rutas Next.js, animaciones y entrega de artículos VitePress.",
+    "highlights": "Notas sobre controles, idiomas, animaciones, SEO y recursos.",
+    "requirements": "Comprobaciones de diseño, navegación, accesibilidad, publicación y rendimiento.",
+    "learning": "Orden de lectura del código y seis ejercicios para modificar y comprobar el sitio."
+  },
+  "pt": {
+    "overview": "Estrutura, implementação e testes do site que recria o DeepSeek Harness.",
+    "architecture": "Componentes React, rotas Next.js, animações e entrega de artigos VitePress.",
+    "highlights": "Notas sobre controles, idiomas, animações, SEO e recursos.",
+    "requirements": "Verificações de layout, navegação, acessibilidade, publicação e desempenho.",
+    "learning": "Ordem de leitura do código e seis exercícios para alterar e verificar o site."
+  },
+  "id": {
+    "overview": "Struktur, implementasi, dan pengujian situs yang membuat ulang DeepSeek Harness.",
+    "architecture": "Komponen React, rute Next.js, animasi, dan penyajian artikel VitePress.",
+    "highlights": "Catatan implementasi kontrol, bahasa, animasi, SEO, dan sumber daya.",
+    "requirements": "Pemeriksaan tata letak, navigasi, aksesibilitas, publikasi, dan performa.",
+    "learning": "Urutan membaca kode dan enam latihan untuk mengubah serta memeriksa situs."
+  },
+  "tr": {
+    "overview": "DeepSeek Harness sitesinin yeniden oluşturulması: yapı, uygulama ve testler.",
+    "architecture": "React bileşenleri, Next.js yolları, animasyonlar ve VitePress makaleleri.",
+    "highlights": "Kontroller, diller, animasyonlar, SEO ve kaynakların uygulama notları.",
+    "requirements": "Düzen, gezinme, erişilebilirlik, yayın ve performans kontrolleri.",
+    "learning": "Kod okuma sırası ve siteyi değiştirmek için altı doğrulama alıştırması."
+  },
+  "pl": {
+    "overview": "Budowa, implementacja i testy odtworzonej witryny DeepSeek Harness.",
+    "architecture": "Komponenty React, trasy Next.js, animacje i dostarczanie artykułów VitePress.",
+    "highlights": "Uwagi o kontrolkach, językach, animacjach, SEO i zasobach.",
+    "requirements": "Sprawdzanie układu, nawigacji, dostępności, publikacji i wydajności.",
+    "learning": "Kolejność czytania kodu i sześć ćwiczeń ze zmiany i sprawdzania witryny."
+  },
+  "it": {
+    "overview": "Struttura, implementazione e test del sito che ricrea DeepSeek Harness.",
+    "architecture": "Componenti React, route Next.js, animazioni e distribuzione degli articoli VitePress.",
+    "highlights": "Note su controlli, lingue, animazioni, SEO e risorse.",
+    "requirements": "Controlli per layout, navigazione, accessibilità, pubblicazione e prestazioni.",
+    "learning": "Ordine di lettura del codice e sei esercizi per modificare e verificare il sito."
+  },
+  "vi": {
+    "overview": "Cấu trúc, triển khai và kiểm thử website tái hiện DeepSeek Harness.",
+    "architecture": "Thành phần React, tuyến Next.js, hoạt ảnh và phục vụ bài viết VitePress.",
+    "highlights": "Ghi chú triển khai thao tác, ngôn ngữ, hoạt ảnh, SEO và tài nguyên.",
+    "requirements": "Kiểm tra bố cục, điều hướng, khả năng tiếp cận, xuất bản và hiệu năng.",
+    "learning": "Thứ tự đọc mã và sáu bài tập chỉnh sửa, kiểm tra website."
+  },
+  "nl": {
+    "overview": "Opbouw, implementatie en tests van de nagebouwde DeepSeek Harness-website.",
+    "architecture": "React-componenten, Next.js-routes, animaties en VitePress-artikelen.",
+    "highlights": "Notities over bediening, talen, animaties, SEO en bronnen.",
+    "requirements": "Controles voor indeling, navigatie, toegankelijkheid, publicatie en prestaties.",
+    "learning": "Volgorde voor het lezen van de code en zes oefeningen voor wijzigen en controleren."
+  },
+  "cs": {
+    "overview": "Struktura, implementace a testy znovuvytvořeného webu DeepSeek Harness.",
+    "architecture": "Komponenty React, cesty Next.js, animace a doručování článků VitePress.",
+    "highlights": "Poznámky k ovládání, jazykům, animacím, SEO a zdrojům.",
+    "requirements": "Kontroly rozvržení, navigace, přístupnosti, publikace a výkonu.",
+    "learning": "Pořadí čtení kódu a šest cvičení pro změny a ověření webu."
+  },
+  "ro": {
+    "overview": "Structura, implementarea și testele site-ului recreat DeepSeek Harness.",
+    "architecture": "Componente React, rute Next.js, animații și livrarea articolelor VitePress.",
+    "highlights": "Note despre controale, limbi, animații, SEO și resurse.",
+    "requirements": "Verificări pentru aspect, navigare, accesibilitate, publicare și performanță.",
+    "learning": "Ordinea de citire a codului și șase exerciții de modificare și verificare."
+  },
+  "uk": {
+    "overview": "Будова, реалізація й тести відтвореного сайту DeepSeek Harness.",
+    "architecture": "Компоненти React, маршрути Next.js, анімації та доставка статей VitePress.",
+    "highlights": "Нотатки про елементи керування, мови, анімації, SEO та ресурси.",
+    "requirements": "Перевірки макета, навігації, доступності, публікації та продуктивності.",
+    "learning": "Порядок читання коду та шість вправ зі зміни й перевірки сайту."
+  },
+  "he": {
+    "overview": "מבנה, מימוש ובדיקות של האתר המשחזר את DeepSeek Harness.",
+    "architecture": "רכיבי React, נתיבי Next.js, אנימציות והגשת מאמרי VitePress.",
+    "highlights": "הערות מימוש על פקדים, שפות, אנימציות, SEO ומשאבים.",
+    "requirements": "בדיקות לפריסה, ניווט, נגישות, פרסום וביצועים.",
+    "learning": "סדר קריאת הקוד ושישה תרגילים לשינוי האתר ולבדיקתו."
+  },
+  "fa": {
+    "overview": "ساختار، پیاده‌سازی و آزمون سایت بازسازی‌شدهٔ DeepSeek Harness.",
+    "architecture": "اجزای React، مسیرهای Next.js، پویانمایی و ارائهٔ مقاله‌های VitePress.",
+    "highlights": "یادداشت‌های پیاده‌سازی کنترل‌ها، زبان‌ها، پویانمایی، SEO و منابع.",
+    "requirements": "بررسی چیدمان، ناوبری، دسترس‌پذیری، انتشار و کارایی.",
+    "learning": "ترتیب خواندن کد و شش تمرین برای تغییر و بررسی سایت."
+  },
+  "th": {
+    "overview": "โครงสร้าง การพัฒนา และการทดสอบเว็บไซต์ที่สร้าง DeepSeek Harness ขึ้นใหม่",
+    "architecture": "คอมโพเนนต์ React เส้นทาง Next.js ภาพเคลื่อนไหว และบทความ VitePress",
+    "highlights": "บันทึกการพัฒนาตัวควบคุม ภาษา ภาพเคลื่อนไหว SEO และทรัพยากร",
+    "requirements": "รายการตรวจเลย์เอาต์ การนำทาง การเข้าถึง การเผยแพร่ และประสิทธิภาพ",
+    "learning": "ลำดับการอ่านโค้ดและแบบฝึกหัดหกข้อเพื่อแก้ไขและตรวจเว็บไซต์"
+  },
+  "hi": {
+    "overview": "दोबारा बनाई गई DeepSeek Harness वेबसाइट की संरचना, निर्माण और परीक्षण।",
+    "architecture": "React कंपोनेंट, Next.js रास्ते, ऐनिमेशन और VitePress लेखों की डिलीवरी।",
+    "highlights": "कंट्रोल, भाषा, ऐनिमेशन, SEO और संसाधनों के निर्माण पर नोट्स।",
+    "requirements": "लेआउट, नेविगेशन, सुलभता, प्रकाशन और प्रदर्शन की जाँच।",
+    "learning": "कोड पढ़ने का क्रम और वेबसाइट बदलने व जाँचने के छह अभ्यास।"
+  },
+  "bn": {
+    "overview": "পুনর্নির্মিত DeepSeek Harness ওয়েবসাইটের গঠন, বাস্তবায়ন ও পরীক্ষা।",
+    "architecture": "React কম্পোনেন্ট, Next.js পথ, অ্যানিমেশন ও VitePress নিবন্ধ পরিবেশন।",
+    "highlights": "নিয়ন্ত্রণ, ভাষা, অ্যানিমেশন, SEO ও রিসোর্স বাস্তবায়নের নোট।",
+    "requirements": "বিন্যাস, নেভিগেশন, প্রবেশগম্যতা, প্রকাশ ও কর্মক্ষমতার পরীক্ষা।",
+    "learning": "কোড পড়ার ক্রম এবং সাইট বদলানো ও যাচাই করার ছয়টি অনুশীলন।"
+  },
+  "ur": {
+    "overview": "دوبارہ بنائی گئی DeepSeek Harness ویب سائٹ کی ساخت، تعمیر اور جانچ۔",
+    "architecture": "React کمپوننٹس، Next.js راستے، اینیمیشن اور VitePress مضامین کی فراہمی۔",
+    "highlights": "کنٹرولز، زبانوں، اینیمیشن، SEO اور وسائل کی تعمیر کے نوٹس۔",
+    "requirements": "ترتیب، نیویگیشن، رسائی، اشاعت اور کارکردگی کی جانچ۔",
+    "learning": "کوڈ پڑھنے کی ترتیب اور ویب سائٹ بدلنے اور جانچنے کی چھ مشقیں۔"
+  },
+  "zh-TW": {
+    "overview": "DeepSeek Harness 重現網站的頁面結構、實作方式和測試方法。",
+    "architecture": "React 元件、Next.js 路由、動畫播放和 VitePress 文件交付。",
+    "highlights": "頁面控制項、多語言、動畫、SEO 和資源管理的實作說明。",
+    "requirements": "版面、導覽、無障礙、部署和效能的檢查清單。",
+    "learning": "原始碼閱讀順序，以及六個網站修改與驗證練習。"
+  }
+}

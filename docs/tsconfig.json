@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "plugins": [],
+    "types": ["node", "vitepress/client"]
+  },
+  "include": [".vitepress/**/*.ts", ".vitepress/**/*.mts"],
+  "exclude": [".vitepress/cache", ".vitepress/dist", ".vitepress/.temp"]
+}

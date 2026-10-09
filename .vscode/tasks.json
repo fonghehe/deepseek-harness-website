@@ -1,0 +1,229 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dependencies: install",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["install"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docs: build",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["docs:build"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Dev: website",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["dev", "--port", "3100", "--hostname", "127.0.0.1"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "owner": "website",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(error|warning)\\s+(.+)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*(?:Next.js|Starting).*",
+          "endsPattern": ".*Ready in.*"
+        }
+      },
+      "dependsOn": "Docs: build",
+      "dependsOrder": "sequence",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Dev: docs",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["docs:dev", "--host", "127.0.0.1", "--port", "5173", "--strictPort"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "owner": "website",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(error|warning)\\s+(.+)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*(?:vitepress|VITE).*",
+          "endsPattern": ".*Local:.*http.*"
+        }
+      },
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Lint",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["lint"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Typecheck",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["typecheck"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "Build: website and docs",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["build"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Test: E2E",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["test:e2e"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "E2E_PORT": "3101"
+        }
+      },
+      "problemMatcher": [],
+      "dependsOn": "Build: website and docs",
+      "dependsOrder": "sequence",
+      "group": "test"
+    },
+    {
+      "label": "Verify",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["verify"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint: fix",
+      "type": "process",
+      "command": "pnpm",
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "args": ["lint:fix"]
+    },
+    {
+      "label": "Format",
+      "type": "process",
+      "command": "pnpm",
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "args": ["format"]
+    },
+    {
+      "label": "Format: check",
+      "type": "process",
+      "command": "pnpm",
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "args": ["format:check"]
+    },
+    {
+      "label": "Verify: full",
+      "type": "process",
+      "command": "pnpm",
+      "args": ["verify:full"],
+      "windows": {
+        "command": "pnpm.cmd"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "E2E_PORT": "3101"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}

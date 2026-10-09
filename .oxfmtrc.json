@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    ".next-profiles/",
+    "out/",
+    "dist/",
+    "build/",
+    ".pnpm-store/",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "*.tsbuildinfo",
+    "next-env.d.ts",
+    "test-results/",
+    "playwright-report/",
+    "blob-report/",
+    "coverage/",
+    "docs/.vitepress/cache/",
+    "docs/.vitepress/dist/",
+    "docs/.vitepress/.temp/",
+    "public/docs/",
+    "**/*.svg",
+    ".pages-build/"
+  ]
+}

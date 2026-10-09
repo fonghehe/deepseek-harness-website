@@ -1,0 +1,210 @@
+{
+  "en": {
+    "SSR": "Server-side rendering",
+    "Hydration": "Hydration: attaching client behavior to server HTML",
+    "Reduced motion": "Reduced motion preference",
+    "RTL": "Right-to-left layout",
+    "Visual regression": "Visual regression testing",
+    "Resource budget": "Resource budget"
+  },
+  "zh": {
+    "SSR": "服务端渲染",
+    "Hydration": "水合：让服务端 HTML 具备客户端交互",
+    "Reduced motion": "减少动态效果偏好",
+    "RTL": "从右到左布局",
+    "Visual regression": "视觉回归测试",
+    "Resource budget": "资源预算"
+  },
+  "ja": {
+    "SSR": "サーバーサイドレンダリング",
+    "Hydration": "ハイドレーション：サーバーの HTML に操作を追加",
+    "Reduced motion": "動きを減らす設定",
+    "RTL": "右から左へのレイアウト",
+    "Visual regression": "ビジュアルリグレッションテスト",
+    "Resource budget": "リソース予算"
+  },
+  "fr": {
+    "SSR": "Rendu côté serveur",
+    "Hydration": "Hydratation : rendre interactif le HTML du serveur",
+    "Reduced motion": "Préférence de réduction des animations",
+    "RTL": "Disposition de droite à gauche",
+    "Visual regression": "Tests de régression visuelle",
+    "Resource budget": "Budget de ressources"
+  },
+  "de": {
+    "SSR": "Serverseitiges Rendering",
+    "Hydration": "Hydration: Server-HTML mit Interaktionen verbinden",
+    "Reduced motion": "Einstellung für reduzierte Animationen",
+    "RTL": "Rechts-nach-links-Layout",
+    "Visual regression": "Visuelle Regressionstests",
+    "Resource budget": "Ressourcenbudget"
+  },
+  "ko": {
+    "SSR": "서버 렌더링",
+    "Hydration": "하이드레이션: 서버 HTML에 클라이언트 동작 연결",
+    "Reduced motion": "동작 줄이기 설정",
+    "RTL": "오른쪽에서 왼쪽으로 배치",
+    "Visual regression": "시각적 회귀 테스트",
+    "Resource budget": "리소스 예산"
+  },
+  "ru": {
+    "SSR": "Серверный рендеринг",
+    "Hydration": "Гидратация: добавление интерактивности к HTML сервера",
+    "Reduced motion": "Настройка уменьшения анимации",
+    "RTL": "Разметка справа налево",
+    "Visual regression": "Тестирование визуальных регрессий",
+    "Resource budget": "Бюджет ресурсов"
+  },
+  "ar": {
+    "SSR": "العرض على الخادم",
+    "Hydration": "التهيئة التفاعلية: إضافة تفاعل العميل إلى HTML الخادم",
+    "Reduced motion": "تفضيل تقليل الحركة",
+    "RTL": "تخطيط من اليمين إلى اليسار",
+    "Visual regression": "اختبارات الانحدار البصري",
+    "Resource budget": "ميزانية الموارد"
+  },
+  "es": {
+    "SSR": "Renderizado en el servidor",
+    "Hydration": "Hidratación: añadir interacción al HTML del servidor",
+    "Reduced motion": "Preferencia de movimiento reducido",
+    "RTL": "Diseño de derecha a izquierda",
+    "Visual regression": "Pruebas de regresión visual",
+    "Resource budget": "Presupuesto de recursos"
+  },
+  "pt": {
+    "SSR": "Renderização no servidor",
+    "Hydration": "Hidratação: adicionar interação ao HTML do servidor",
+    "Reduced motion": "Preferência por movimento reduzido",
+    "RTL": "Layout da direita para a esquerda",
+    "Visual regression": "Testes de regressão visual",
+    "Resource budget": "Orçamento de recursos"
+  },
+  "id": {
+    "SSR": "Rendering di server",
+    "Hydration": "Hidrasi: menambahkan interaksi klien ke HTML server",
+    "Reduced motion": "Preferensi untuk mengurangi animasi",
+    "RTL": "Tata letak dari kanan ke kiri",
+    "Visual regression": "Pengujian regresi visual",
+    "Resource budget": "Anggaran sumber daya"
+  },
+  "tr": {
+    "SSR": "Sunucu tarafında oluşturma",
+    "Hydration": "Hydration: sunucunun HTML çıktısına istemci etkileşimleri ekleme",
+    "Reduced motion": "Hareketi azaltma tercihi",
+    "RTL": "Sağdan sola yerleşim",
+    "Visual regression": "Görsel regresyon testleri",
+    "Resource budget": "Kaynak bütçesi"
+  },
+  "pl": {
+    "SSR": "Renderowanie po stronie serwera",
+    "Hydration": "Hydratacja: dodawanie interakcji klienta do HTML serwera",
+    "Reduced motion": "Preferencja ograniczenia animacji",
+    "RTL": "Układ od prawej do lewej",
+    "Visual regression": "Testy regresji wizualnej",
+    "Resource budget": "Budżet zasobów"
+  },
+  "it": {
+    "SSR": "Rendering sul server",
+    "Hydration": "Idratazione: aggiungere interazioni al codice HTML del server",
+    "Reduced motion": "Preferenza per animazioni ridotte",
+    "RTL": "Layout da destra a sinistra",
+    "Visual regression": "Test di regressione visiva",
+    "Resource budget": "Budget delle risorse"
+  },
+  "vi": {
+    "SSR": "Render phía máy chủ",
+    "Hydration": "Hydration: bổ sung tương tác vào HTML từ máy chủ",
+    "Reduced motion": "Tùy chọn giảm chuyển động",
+    "RTL": "Bố cục từ phải sang trái",
+    "Visual regression": "Kiểm thử hồi quy hình ảnh",
+    "Resource budget": "Ngân sách tài nguyên"
+  },
+  "nl": {
+    "SSR": "Rendering op de server",
+    "Hydration": "Hydratatie: interactie toevoegen aan HTML van de server",
+    "Reduced motion": "Voorkeur voor minder animatie",
+    "RTL": "Indeling van rechts naar links",
+    "Visual regression": "Visuele regressietests",
+    "Resource budget": "Resourcebudget"
+  },
+  "cs": {
+    "SSR": "Vykreslování na serveru",
+    "Hydration": "Hydratace: přidání interakcí do HTML ze serveru",
+    "Reduced motion": "Preference omezených animací",
+    "RTL": "Rozvržení zprava doleva",
+    "Visual regression": "Testy vizuální regrese",
+    "Resource budget": "Rozpočet prostředků"
+  },
+  "ro": {
+    "SSR": "Randare pe server",
+    "Hydration": "Hidratare: adăugarea interacțiunilor la HTML-ul serverului",
+    "Reduced motion": "Preferință pentru reducerea animațiilor",
+    "RTL": "Aspect de la dreapta la stânga",
+    "Visual regression": "Teste de regresie vizuală",
+    "Resource budget": "Buget de resurse"
+  },
+  "uk": {
+    "SSR": "Серверний рендеринг",
+    "Hydration": "Гідратація: додавання взаємодії до HTML із сервера",
+    "Reduced motion": "Налаштування зменшення анімації",
+    "RTL": "Розміщення справа наліво",
+    "Visual regression": "Тести візуальних регресій",
+    "Resource budget": "Бюджет ресурсів"
+  },
+  "he": {
+    "SSR": "רינדור בצד השרת",
+    "Hydration": "הידרציה: הוספת אינטראקציות ל־HTML של השרת",
+    "Reduced motion": "העדפה להפחתת אנימציה",
+    "RTL": "פריסה מימין לשמאל",
+    "Visual regression": "בדיקות רגרסיה חזותית",
+    "Resource budget": "תקציב משאבים"
+  },
+  "fa": {
+    "SSR": "رندر سمت سرور",
+    "Hydration": "Hydration: افزودن تعامل به HTML سرور",
+    "Reduced motion": "ترجیح کاهش پویانمایی",
+    "RTL": "چیدمان راست به چپ",
+    "Visual regression": "آزمون رگرسیون بصری",
+    "Resource budget": "بودجهٔ منابع"
+  },
+  "th": {
+    "SSR": "การเรนเดอร์ฝั่งเซิร์ฟเวอร์",
+    "Hydration": "Hydration: เพิ่มการโต้ตอบให้ HTML จากเซิร์ฟเวอร์",
+    "Reduced motion": "การตั้งค่าให้ลดการเคลื่อนไหว",
+    "RTL": "รูปแบบการจัดวางจากขวาไปซ้าย",
+    "Visual regression": "การทดสอบความเปลี่ยนแปลงของภาพหน้าจอ",
+    "Resource budget": "ขีดจำกัดการใช้ทรัพยากร"
+  },
+  "hi": {
+    "SSR": "सर्वर पर रेंडरिंग",
+    "Hydration": "Hydration: सर्वर से मिले HTML में इंटरैक्शन जोड़ना",
+    "Reduced motion": "कम ऐनिमेशन की प्राथमिकता",
+    "RTL": "दाएँ से बाएँ लेआउट",
+    "Visual regression": "दृश्य बदलावों का रिग्रेशन परीक्षण",
+    "Resource budget": "संसाधनों के इस्तेमाल की सीमा"
+  },
+  "bn": {
+    "SSR": "সার্ভারে রেন্ডারিং",
+    "Hydration": "Hydration: সার্ভারের HTML-এ ইন্টারঅ্যাকশন যোগ করা",
+    "Reduced motion": "অ্যানিমেশন কমানোর পছন্দ",
+    "RTL": "ডান থেকে বামে বিন্যাস",
+    "Visual regression": "দৃশ্যগত পরিবর্তনের রিগ্রেশন পরীক্ষা",
+    "Resource budget": "রিসোর্স ব্যবহারের সীমা"
+  },
+  "ur": {
+    "SSR": "سرور پر رینڈرنگ",
+    "Hydration": "Hydration: سرور کے HTML میں تعامل شامل کرنا",
+    "Reduced motion": "کم اینیمیشن کی ترجیح",
+    "RTL": "دائیں سے بائیں ترتیب",
+    "Visual regression": "بصری تبدیلیوں کا ریگریشن ٹیسٹ",
+    "Resource budget": "وسائل کے استعمال کی حد"
+  },
+  "zh-TW": {
+    "SSR": "伺服器端渲染",
+    "Hydration": "Hydration：讓伺服器端 HTML 具備用戶端互動",
+    "Reduced motion": "減少動態效果偏好",
+    "RTL": "從右到左佈局",
+    "Visual regression": "視覺回歸測試",
+    "Resource budget": "資源預算"
+  }
+}

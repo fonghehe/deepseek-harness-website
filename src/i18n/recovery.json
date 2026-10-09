@@ -1,0 +1,236 @@
+{
+  "en": {
+    "missing": "Page not found",
+    "error": "This page could not load",
+    "detail": "Choose a website or documentation entry to continue.",
+    "home": "Website",
+    "docs": "Documentation",
+    "retry": "Try again",
+    "languages": "Languages"
+  },
+  "zh": {
+    "missing": "页面不存在",
+    "error": "页面暂时无法加载",
+    "detail": "你可以返回官网或文档继续浏览。",
+    "home": "官网",
+    "docs": "文档",
+    "retry": "重试",
+    "languages": "语言"
+  },
+  "ja": {
+    "missing": "ページが見つかりません",
+    "error": "ページを読み込めませんでした",
+    "detail": "ウェブサイトまたはドキュメントから閲覧を続けてください。",
+    "home": "ウェブサイト",
+    "docs": "ドキュメント",
+    "retry": "再試行",
+    "languages": "言語"
+  },
+  "fr": {
+    "missing": "Page introuvable",
+    "error": "Impossible de charger cette page",
+    "detail": "Continuez sur le site ou dans la documentation.",
+    "home": "Site",
+    "docs": "Documentation",
+    "retry": "Réessayer",
+    "languages": "Langues"
+  },
+  "de": {
+    "missing": "Seite nicht gefunden",
+    "error": "Diese Seite konnte nicht geladen werden",
+    "detail": "Besuchen Sie die Website oder die Dokumentation.",
+    "home": "Website",
+    "docs": "Dokumentation",
+    "retry": "Erneut versuchen",
+    "languages": "Sprachen"
+  },
+  "ko": {
+    "missing": "페이지를 찾을 수 없습니다",
+    "error": "페이지를 불러올 수 없습니다",
+    "detail": "웹사이트 또는 문서에서 계속 탐색하세요.",
+    "home": "웹사이트",
+    "docs": "문서",
+    "retry": "다시 시도",
+    "languages": "언어"
+  },
+  "ru": {
+    "missing": "Страница не найдена",
+    "error": "Не удалось загрузить страницу",
+    "detail": "Продолжите на сайте или в документации.",
+    "home": "Сайт",
+    "docs": "Документация",
+    "retry": "Повторить",
+    "languages": "Языки"
+  },
+  "ar": {
+    "missing": "الصفحة غير موجودة",
+    "error": "تعذر تحميل هذه الصفحة",
+    "detail": "تابع التصفح من الموقع أو الوثائق.",
+    "home": "الموقع",
+    "docs": "الوثائق",
+    "retry": "حاول مجددًا",
+    "languages": "اللغات"
+  },
+  "es": {
+    "missing": "Página no encontrada",
+    "error": "No se pudo cargar esta página",
+    "detail": "Continúa en el sitio o en la documentación.",
+    "home": "Sitio web",
+    "docs": "Documentación",
+    "retry": "Reintentar",
+    "languages": "Idiomas"
+  },
+  "pt": {
+    "missing": "Página não encontrada",
+    "error": "Não foi possível carregar esta página",
+    "detail": "Continue no site ou na documentação.",
+    "home": "Site",
+    "docs": "Documentação",
+    "retry": "Tentar novamente",
+    "languages": "Idiomas"
+  },
+  "id": {
+    "missing": "Halaman tidak ditemukan",
+    "error": "Halaman tidak dapat dimuat",
+    "detail": "Lanjutkan melalui situs atau dokumentasi.",
+    "home": "Situs",
+    "docs": "Dokumentasi",
+    "retry": "Coba lagi",
+    "languages": "Bahasa"
+  },
+  "tr": {
+    "missing": "Sayfa bulunamadı",
+    "error": "Bu sayfa yüklenemedi",
+    "detail": "Devam etmek için siteye veya belgelere geçin.",
+    "home": "Site",
+    "docs": "Belgeler",
+    "retry": "Yeniden dene",
+    "languages": "Diller"
+  },
+  "pl": {
+    "missing": "Nie znaleziono strony",
+    "error": "Nie udało się załadować strony",
+    "detail": "Przejdź do witryny lub dokumentacji, aby kontynuować.",
+    "home": "Witryna",
+    "docs": "Dokumentacja",
+    "retry": "Spróbuj ponownie",
+    "languages": "Języki"
+  },
+  "it": {
+    "missing": "Pagina non trovata",
+    "error": "Impossibile caricare la pagina",
+    "detail": "Continua dal sito o dalla documentazione.",
+    "home": "Sito",
+    "docs": "Documentazione",
+    "retry": "Riprova",
+    "languages": "Lingue"
+  },
+  "vi": {
+    "missing": "Không tìm thấy trang",
+    "error": "Không tải được trang này",
+    "detail": "Tiếp tục từ website hoặc tài liệu.",
+    "home": "Website",
+    "docs": "Tài liệu",
+    "retry": "Thử lại",
+    "languages": "Ngôn ngữ"
+  },
+  "nl": {
+    "missing": "Pagina niet gevonden",
+    "error": "Deze pagina kon niet laden",
+    "detail": "Ga verder via de website of documentatie.",
+    "home": "Website",
+    "docs": "Documentatie",
+    "retry": "Opnieuw proberen",
+    "languages": "Talen"
+  },
+  "cs": {
+    "missing": "Stránka nenalezena",
+    "error": "Stránku se nepodařilo načíst",
+    "detail": "Pokračujte přes web nebo dokumentaci.",
+    "home": "Web",
+    "docs": "Dokumentace",
+    "retry": "Zkusit znovu",
+    "languages": "Jazyky"
+  },
+  "ro": {
+    "missing": "Pagina nu a fost găsită",
+    "error": "Pagina nu s-a putut încărca",
+    "detail": "Continuă de pe site sau din documentație.",
+    "home": "Site",
+    "docs": "Documentație",
+    "retry": "Încearcă din nou",
+    "languages": "Limbi"
+  },
+  "uk": {
+    "missing": "Сторінку не знайдено",
+    "error": "Не вдалося завантажити сторінку",
+    "detail": "Продовжуйте на сайті або в документації.",
+    "home": "Сайт",
+    "docs": "Документація",
+    "retry": "Спробувати ще раз",
+    "languages": "Мови"
+  },
+  "he": {
+    "missing": "העמוד לא נמצא",
+    "error": "לא ניתן לטעון את העמוד",
+    "detail": "המשיכו דרך האתר או התיעוד.",
+    "home": "אתר",
+    "docs": "תיעוד",
+    "retry": "ניסיון נוסף",
+    "languages": "שפות"
+  },
+  "fa": {
+    "missing": "صفحه پیدا نشد",
+    "error": "این صفحه بارگذاری نشد",
+    "detail": "از سایت یا مستندات به مرور ادامه دهید.",
+    "home": "سایت",
+    "docs": "مستندات",
+    "retry": "تلاش دوباره",
+    "languages": "زبان‌ها"
+  },
+  "th": {
+    "missing": "ไม่พบหน้านี้",
+    "error": "โหลดหน้านี้ไม่สำเร็จ",
+    "detail": "คุณสามารถกลับไปที่เว็บไซต์หรืออ่านเอกสารต่อได้",
+    "home": "เว็บไซต์",
+    "docs": "เอกสาร",
+    "retry": "ลองอีกครั้ง",
+    "languages": "ภาษา"
+  },
+  "hi": {
+    "missing": "पेज नहीं मिला",
+    "error": "यह पेज लोड नहीं हो पाया",
+    "detail": "वेबसाइट या दस्तावेज़ों से आगे बढ़ सकते हैं।",
+    "home": "वेबसाइट",
+    "docs": "दस्तावेज़",
+    "retry": "फिर कोशिश करें",
+    "languages": "भाषाएँ"
+  },
+  "bn": {
+    "missing": "পাতাটি পাওয়া যায়নি",
+    "error": "পাতাটি লোড করা যায়নি",
+    "detail": "ওয়েবসাইট বা ডকুমেন্টেশন থেকে পড়া চালিয়ে যেতে পারেন।",
+    "home": "ওয়েবসাইট",
+    "docs": "ডকুমেন্টেশন",
+    "retry": "আবার চেষ্টা করুন",
+    "languages": "ভাষা"
+  },
+  "ur": {
+    "missing": "صفحہ نہیں ملا",
+    "error": "یہ صفحہ لوڈ نہیں ہو سکا",
+    "detail": "ویب سائٹ یا دستاویزات سے آگے بڑھ سکتے ہیں۔",
+    "home": "ویب سائٹ",
+    "docs": "دستاویزات",
+    "retry": "دوبارہ کوشش کریں",
+    "languages": "زبانیں"
+  },
+  "zh-TW": {
+    "missing": "頁面不存在",
+    "error": "頁面暫時無法載入",
+    "detail": "你可以返回官網或文件繼續瀏覽。",
+    "home": "官網",
+    "docs": "文件",
+    "retry": "重試",
+    "languages": "語言"
+  }
+}

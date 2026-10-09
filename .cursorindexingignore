@@ -1,0 +1,8 @@
+# Omit large snapshots and binary assets from background indexing only.
+# Agents can still read these explicitly when adapting the preserved runtime.
+public/fonts/
+public/images/
+public/brand/*.png
+
+# Isolated GitHub Pages build input
+.pages-build/

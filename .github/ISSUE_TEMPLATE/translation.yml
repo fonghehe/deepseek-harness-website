@@ -1,0 +1,22 @@
+name: Translation review
+description: Review wording, terminology, accessibility labels or localized documentation.
+title: '[Translation] '
+body:
+  - type: input
+    id: locale
+    attributes:
+      label: Language and page or translation key
+    validations:
+      required: true
+  - type: textarea
+    id: wording
+    attributes:
+      label: Current and proposed wording
+      description: Explain terminology and whether you are a native speaker. Keep placeholders and code intact.
+    validations:
+      required: true
+  - type: textarea
+    id: layout
+    attributes:
+      label: Layout evidence
+      description: Include a narrow-screen or RTL example if relevant.

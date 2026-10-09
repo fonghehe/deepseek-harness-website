@@ -1,0 +1,116 @@
+:root {
+  --vp-c-brand-1: #333;
+  --vp-c-brand-2: #555;
+  --vp-c-brand-3: #222;
+}
+html[dir='rtl'] .vp-doc {
+  direction: rtl;
+  text-align: start;
+}
+html[dir='rtl'] .vp-doc :is(pre, code) {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+html[dir='rtl'] .vp-doc ul,
+html[dir='rtl'] .vp-doc ol {
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 0;
+}
+html[dir='rtl'] .vp-doc .header-anchor {
+  float: right;
+  margin-inline-start: -0.87em;
+  margin-inline-end: 0;
+}
+html[dir='rtl'] .VPNavBarMenu {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+html[dir='rtl'] .VPDocAsideOutline {
+  border-inline-start: 1px solid var(--vp-c-divider);
+  border-left: 0;
+  padding-inline-start: 16px;
+  padding-left: 0;
+}
+html[dir='rtl'] .VPSidebarItem .text {
+  text-align: start;
+}
+html[dir='rtl'] .VPDocFooter .prev .title,
+html[dir='rtl'] .VPDocFooter .prev .desc {
+  text-align: right;
+}
+html[dir='rtl'] .VPDocFooter .next .title,
+html[dir='rtl'] .VPDocFooter .next .desc {
+  text-align: left;
+}
+
+@media (min-width: 960px) {
+  html[dir='rtl'] .VPSidebar {
+    left: auto;
+    right: 0;
+    border-left: 1px solid var(--vp-c-divider);
+    border-right: 0;
+  }
+  html[dir='rtl'] .VPContent.has-sidebar {
+    padding-left: 0;
+    padding-right: var(--vp-sidebar-width);
+  }
+  html[dir='rtl'] .VPNavBar.has-sidebar .title {
+    left: auto;
+    right: 0;
+  }
+  html[dir='rtl'] .VPNavBar.has-sidebar .content {
+    padding-left: 32px;
+    padding-right: var(--vp-sidebar-width);
+  }
+}
+@media (min-width: 1440px) {
+  html[dir='rtl'] .VPSidebar {
+    padding-left: 32px;
+    padding-right: max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2));
+  }
+  html[dir='rtl'] .VPContent.has-sidebar {
+    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2);
+  }
+}
+
+.docs-product-link {
+  font-size: 14px;
+  padding-inline: 1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .VPNavBar .container > .title {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .VPNavBarTitle {
+    min-width: 0;
+  }
+  .VPNavBarTitle .title > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .VPNavBarTitle .logo {
+    flex-shrink: 0;
+  }
+  .docs-product-link {
+    padding-inline: 0.5rem;
+  }
+}
+
+html[dir='rtl'] .VPNavBarTitle .logo {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Readable code language labels in both themes. */
+.vp-doc [class*='language-'] > span.lang {
+  color: #666970;
+}
+.dark .vp-doc [class*='language-'] > span.lang {
+  color: #aeb3be;
+}

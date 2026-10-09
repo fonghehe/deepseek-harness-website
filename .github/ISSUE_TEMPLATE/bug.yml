@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible website, translation or documentation problem.
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: This repository recreates a website. For DeepSeek Harness runtime problems, use its upstream repository. Please omit tokens and personal data.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the URL or document, language, viewport, browser and OS. For animation problems, include reduced-motion settings.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Optional screenshot, console error, or minimal reproduction. Remove private data.

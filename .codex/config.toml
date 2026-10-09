@@ -1,0 +1,3 @@
+# Shared instruction discovery only. Keep personal models and permissions local.
+project_doc_max_bytes = 32768
+project_doc_fallback_filenames = ["AGENT.md"]

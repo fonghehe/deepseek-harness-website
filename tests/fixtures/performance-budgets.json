@@ -1,0 +1,17 @@
+{
+  "htmlGrowth": 1.2,
+  "transferGrowth": 1.25,
+  "pages": {
+    "/docs/en/architecture/": {
+      "htmlBytes": 49152,
+      "reason": "The architecture article now covers the complete website engineering flow, rather than a short product overview. A 48 KiB HTML ceiling includes article content and metadata; website limits and transfer growth limits stay unchanged."
+    }
+  },
+  "absolute": {
+    "transferBytes": 552960,
+    "jsBytes": 368640,
+    "cssBytes": 32768,
+    "fontBytes": 107520
+  },
+  "reason": "Absolute compressed-transfer ceilings protect the current source implementation while retaining the historical baseline. Timings are reported as repeated lab medians, not single-run CI scores."
+}

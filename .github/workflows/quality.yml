@@ -1,0 +1,90 @@
+name: Publish website
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.ref_name != github.event.repository.default_branch }}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      pages: read
+    env:
+      CI: true
+      E2E_PORT: 3101
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - name: Read production Pages URL
+        id: pages
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
+      - run: pnpm exec playwright install --with-deps chromium firefox webkit
+      - name: Verify the Node website, browsers and resource budgets
+        run: pnpm verify:full
+      - name: Export, check and test the exact Pages artifact
+        run: |
+          pnpm build:pages
+          pnpm check:pages
+          E2E_PAGES=1 E2E_PORT=3109 pnpm exec playwright test --project=chromium
+          pnpm perf:pages
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url && format('{0}/', steps.pages.outputs.base_url) || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
+      # out/index.html is the Next.js landing page; VitePress stays under out/docs/.
+      - name: Upload the verified website and nested documentation
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+        with:
+          name: github-pages
+          path: out
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        if: always()
+        with:
+          name: quality-reports
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  publish:
+    needs: verify
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    permissions:
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
+
+  external-links:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .node-version
+      - run: node tests/tools/check-links.mjs --strict

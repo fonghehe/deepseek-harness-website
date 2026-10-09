@@ -1,0 +1,15 @@
+# Exclude local secrets from Cursor context; retain the documented example.
+.env*
+!.env.example
+*.pem
+*.key
+.codex/auth.json
+.codex/history.jsonl
+.cursor/mcp.json
+.cursor/settings.json
+AGENTS.local.md
+AGENT.local.md
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Git already excludes build output, reports and dependencies.

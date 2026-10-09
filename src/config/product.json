@@ -1,0 +1,42 @@
+{
+  "links": {
+    "repository": "https://github.com/deepseek-ai/deepseek-harness",
+    "docsChinese": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart",
+    "docsEnglish": "https://deepseek-harness.github.io/deepseek-harness/en/guide/quickstart",
+    "windowsDownload": "https://download.deepseek.com/desktop/dsh-latest-windows-x64.exe",
+    "macDownload": "https://download.deepseek.com/desktop/dsh-latest-macos-arm64.dmg",
+    "twitter": "https://x.com/deepseek_ai",
+    "paper": "https://arxiv.org/abs/2608.25512",
+    "communityPlugins": "https://github.com/topics/dsh-plugin",
+    "privacyEnglish": "https://www.deepseek.com/en/harness/privacy/",
+    "privacyChinese": "https://www.deepseek.com/harness/privacy/",
+    "termsEnglish": "https://www.deepseek.com/en/harness/terms-of-use/",
+    "termsChinese": "https://www.deepseek.com/harness/terms-of-use/"
+  },
+  "featureSources": [
+    {
+      "id": "profiles",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md"
+    },
+    {
+      "id": "providers",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/providers.md"
+    },
+    {
+      "id": "sessions",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/session.md"
+    },
+    {
+      "id": "mcp",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/mcp.md"
+    },
+    {
+      "id": "sandbox",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/sandbox.md"
+    },
+    {
+      "id": "sdk",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/python-sdk.md"
+    }
+  ]
+}

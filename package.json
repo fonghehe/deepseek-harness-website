@@ -1,0 +1,63 @@
+{
+  "name": "ds-agent-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "pnpm docs:build && next build",
+    "start": "next start",
+    "lint": "oxlint --deny-warnings .",
+    "typecheck": "tsc --noEmit && pnpm typecheck:docs",
+    "typecheck:docs": "tsc --noEmit -p docs/tsconfig.json",
+    "format": "oxfmt --write .",
+    "test:e2e": "playwright test",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "lint:fix": "oxlint --fix --deny-warnings .",
+    "format:check": "oxfmt --check .",
+    "check:assets": "node tests/tools/check-assets.mjs",
+    "check:i18n": "node tests/tools/check-i18n.mjs",
+    "check:links": "node tests/tools/check-links.mjs",
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "verify": "pnpm format:check && pnpm lint && pnpm check:assets && pnpm check:i18n && pnpm test:unit && pnpm typecheck && pnpm build",
+    "verify:full": "pnpm verify && pnpm test:e2e && pnpm perf:check",
+    "perf": "node tests/tools/audit-performance.mjs",
+    "perf:check": "node tests/tools/audit-performance.mjs --check-budget",
+    "perf:baseline": "node tests/tools/audit-performance.mjs --update-baseline",
+    "test:cross-browser": "playwright test --project=firefox --project=webkit",
+    "build:pages": "node tests/tools/build-pages.mjs",
+    "check:pages": "node tests/tools/check-pages.mjs",
+    "perf:pages": "node tests/tools/audit-performance.mjs --pages --check-budget",
+    "perf:repeat": "node tests/tools/audit-performance.mjs --runs=3 --check-budget",
+    "analyze": "next experimental-analyze --output",
+    "test:visual": "playwright test tests/visual-regression.spec.ts --project=chromium",
+    "showcase": "node tests/tools/capture-showcase.mjs",
+    "perf:profile": "node tests/tools/profile-startup.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^14.0.0",
+    "next": "16.3.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.186.0",
+    "lighthouse": "^13.0.0",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "typescript": "^5.9.0",
+    "vitepress": "1.6.4",
+    "vue": "3.5.39"
+  },
+  "engines": {
+    "node": ">=24.14.1 <25"
+  },
+  "packageManager": "pnpm@11.16.0"
+}

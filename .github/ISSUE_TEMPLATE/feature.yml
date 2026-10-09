@@ -1,0 +1,18 @@
+name: Improvement
+description: Suggest a focused website or documentation improvement.
+title: '[Feature] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Visitor or contributor problem
+      description: Explain who is affected and the current behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Include examples, affected languages and useful alternatives.
+    validations:
+      required: true

@@ -1,0 +1,44 @@
+{
+  "measuredAt": "2026-10-04T16:15:15.738Z",
+  "node": "v24.14.1",
+  "lighthouse": "13.5.0",
+  "note": "Local mobile lab measurements; timings/scores are observational, not CI thresholds.",
+  "results": [
+    {
+      "path": "/en/harness/",
+      "htmlBytes": 217784,
+      "warmResponseMedianMs": 5.326416999999992,
+      "performance": 0.28,
+      "accessibility": 0.88,
+      "seo": 1,
+      "lcpMs": 8778.6352,
+      "cls": 0.0003542899739807505,
+      "tbtMs": 2153,
+      "transferBytes": 1534236
+    },
+    {
+      "path": "/ar/harness/",
+      "htmlBytes": 221634,
+      "warmResponseMedianMs": 7.191499999986263,
+      "performance": 0.32,
+      "accessibility": 0.88,
+      "seo": 1,
+      "lcpMs": 8124.134144914429,
+      "cls": 0,
+      "tbtMs": 1588.26655072651,
+      "transferBytes": 1598708
+    },
+    {
+      "path": "/docs/en/architecture/",
+      "htmlBytes": 30495,
+      "warmResponseMedianMs": 1.961834000001545,
+      "performance": 0.97,
+      "accessibility": 0.96,
+      "seo": 1,
+      "lcpMs": 2255.5066,
+      "cls": 0,
+      "tbtMs": 4,
+      "transferBytes": 192063
+    }
+  ]
+}

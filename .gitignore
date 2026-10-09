@@ -1,0 +1,81 @@
+# Dependencies and package-manager caches
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js, VitePress and deployment output
+.next/
+.next-profiles/
+.next-preview/
+out/
+dist/
+build/
+.vercel/
+.netlify/
+*.tsbuildinfo
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/.vitepress/.temp/
+public/docs/
+
+# Local environment and credentials (keep the documented template)
+.env*
+!.env.example
+*.pem
+*.key
+
+# Test reports, profiling output and temporary files
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+blob-report/
+*.log
+*.cpuprofile
+*.heapprofile
+*.heapsnapshot
+*.trace
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Shared VS Code/Cursor editor settings are allowlisted below
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/README.md
+*.code-workspace
+.idea/
+.history/
+
+# Track project rules; keep personal Cursor settings, MCP credentials and state local
+.cursor/*
+!.cursor/README.md
+!.cursor/rules/
+!.cursor/rules/**
+
+# Version shared agent configuration only; personal state stays local
+AGENTS.local.md
+AGENT.local.md
+CLAUDE.local.md
+.codex/*
+!.codex/config.toml
+.claude/*
+!.claude/CLAUDE.md
+!.claude/settings.json
+
+# Isolated GitHub Pages build input
+.pages-build/

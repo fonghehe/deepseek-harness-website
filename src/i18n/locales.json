@@ -1,0 +1,210 @@
+{
+  "en": {
+    "label": "English",
+    "language": "en-US",
+    "direction": "ltr",
+    "path": "/en/harness/",
+    "docsPath": "/docs/en/",
+    "ogLocale": "en_US"
+  },
+  "zh": {
+    "label": "简体中文",
+    "language": "zh-CN",
+    "direction": "ltr",
+    "path": "/harness/",
+    "docsPath": "/docs/zh/",
+    "ogLocale": "zh_CN"
+  },
+  "zh-TW": {
+    "label": "繁體中文",
+    "language": "zh-TW",
+    "direction": "ltr",
+    "path": "/zh-TW/harness/",
+    "docsPath": "/docs/zh-TW/",
+    "ogLocale": "zh_TW"
+  },
+  "ja": {
+    "label": "日本語",
+    "language": "ja-JP",
+    "direction": "ltr",
+    "path": "/ja/harness/",
+    "docsPath": "/docs/ja/",
+    "ogLocale": "ja_JP"
+  },
+  "fr": {
+    "label": "Français",
+    "language": "fr-FR",
+    "direction": "ltr",
+    "path": "/fr/harness/",
+    "docsPath": "/docs/fr/",
+    "ogLocale": "fr_FR"
+  },
+  "de": {
+    "label": "Deutsch",
+    "language": "de-DE",
+    "direction": "ltr",
+    "path": "/de/harness/",
+    "docsPath": "/docs/de/",
+    "ogLocale": "de_DE"
+  },
+  "ko": {
+    "label": "한국어",
+    "language": "ko-KR",
+    "direction": "ltr",
+    "path": "/ko/harness/",
+    "docsPath": "/docs/ko/",
+    "ogLocale": "ko_KR"
+  },
+  "ru": {
+    "label": "Русский",
+    "language": "ru-RU",
+    "direction": "ltr",
+    "path": "/ru/harness/",
+    "docsPath": "/docs/ru/",
+    "ogLocale": "ru_RU"
+  },
+  "ar": {
+    "label": "العربية",
+    "language": "ar",
+    "direction": "rtl",
+    "path": "/ar/harness/",
+    "docsPath": "/docs/ar/",
+    "ogLocale": null
+  },
+  "es": {
+    "label": "Español",
+    "language": "es",
+    "direction": "ltr",
+    "path": "/es/harness/",
+    "docsPath": "/docs/es/",
+    "ogLocale": null
+  },
+  "pt": {
+    "label": "Português",
+    "language": "pt-BR",
+    "direction": "ltr",
+    "path": "/pt/harness/",
+    "docsPath": "/docs/pt/",
+    "ogLocale": "pt_BR"
+  },
+  "id": {
+    "label": "Bahasa Indonesia",
+    "language": "id-ID",
+    "direction": "ltr",
+    "path": "/id/harness/",
+    "docsPath": "/docs/id/",
+    "ogLocale": "id_ID"
+  },
+  "tr": {
+    "label": "Türkçe",
+    "language": "tr-TR",
+    "direction": "ltr",
+    "path": "/tr/harness/",
+    "docsPath": "/docs/tr/",
+    "ogLocale": "tr_TR"
+  },
+  "pl": {
+    "label": "Polski",
+    "language": "pl-PL",
+    "direction": "ltr",
+    "path": "/pl/harness/",
+    "docsPath": "/docs/pl/",
+    "ogLocale": "pl_PL"
+  },
+  "it": {
+    "label": "Italiano",
+    "language": "it-IT",
+    "direction": "ltr",
+    "path": "/it/harness/",
+    "docsPath": "/docs/it/",
+    "ogLocale": "it_IT"
+  },
+  "uk": {
+    "label": "Українська",
+    "language": "uk-UA",
+    "direction": "ltr",
+    "path": "/uk/harness/",
+    "docsPath": "/docs/uk/",
+    "ogLocale": "uk_UA"
+  },
+  "vi": {
+    "label": "Tiếng Việt",
+    "language": "vi-VN",
+    "direction": "ltr",
+    "path": "/vi/harness/",
+    "docsPath": "/docs/vi/",
+    "ogLocale": "vi_VN"
+  },
+  "nl": {
+    "label": "Nederlands",
+    "language": "nl-NL",
+    "direction": "ltr",
+    "path": "/nl/harness/",
+    "docsPath": "/docs/nl/",
+    "ogLocale": "nl_NL"
+  },
+  "cs": {
+    "label": "Čeština",
+    "language": "cs-CZ",
+    "direction": "ltr",
+    "path": "/cs/harness/",
+    "docsPath": "/docs/cs/",
+    "ogLocale": "cs_CZ"
+  },
+  "ro": {
+    "label": "Română",
+    "language": "ro-RO",
+    "direction": "ltr",
+    "path": "/ro/harness/",
+    "docsPath": "/docs/ro/",
+    "ogLocale": "ro_RO"
+  },
+  "he": {
+    "label": "עברית",
+    "language": "he-IL",
+    "direction": "rtl",
+    "path": "/he/harness/",
+    "docsPath": "/docs/he/",
+    "ogLocale": "he_IL"
+  },
+  "fa": {
+    "label": "فارسی",
+    "language": "fa-IR",
+    "direction": "rtl",
+    "path": "/fa/harness/",
+    "docsPath": "/docs/fa/",
+    "ogLocale": "fa_IR"
+  },
+  "th": {
+    "label": "ไทย",
+    "language": "th-TH",
+    "direction": "ltr",
+    "path": "/th/harness/",
+    "docsPath": "/docs/th/",
+    "ogLocale": "th_TH"
+  },
+  "hi": {
+    "label": "हिन्दी",
+    "language": "hi-IN",
+    "direction": "ltr",
+    "path": "/hi/harness/",
+    "docsPath": "/docs/hi/",
+    "ogLocale": "hi_IN"
+  },
+  "bn": {
+    "label": "বাংলা",
+    "language": "bn-BD",
+    "direction": "ltr",
+    "path": "/bn/harness/",
+    "docsPath": "/docs/bn/",
+    "ogLocale": "bn_BD"
+  },
+  "ur": {
+    "label": "اردو",
+    "language": "ur-PK",
+    "direction": "rtl",
+    "path": "/ur/harness/",
+    "docsPath": "/docs/ur/",
+    "ogLocale": "ur_PK"
+  }
+}

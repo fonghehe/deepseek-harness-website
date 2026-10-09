@@ -1,0 +1,8 @@
+---
+description: Repository architecture, preservation boundaries, multilingual website and verification workflow.
+alwaysApply: true
+---
+
+Read and follow [AGENTS.md](../../AGENTS.md) at the repository root before editing. It is the canonical project instruction source.
+
+Preserve the existing landing page and animated runtime, extend features incrementally, and keep the website and VitePress docs aligned with the shared multilingual registry. Consult [DEVELOPMENT.md](../../DEVELOPMENT.md) for commands and architecture details. Keep shared instructions in AGENTS.md rather than duplicating them in this rule.

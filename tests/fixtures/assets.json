@@ -1,0 +1,152 @@
+{
+  "note": "Maintained source inputs with integrity and provenance. Attribution is not a blanket trademark or commercial-use permission.",
+  "assets": [
+    {
+      "path": "/brand/brand.png",
+      "sha256": "59901811702183ee8047b61ca7d0be9adc6c1bbd8f6d630f859b60b0e583cd9a",
+      "source": "https://deepseek.com/harness",
+      "license": "Third-party branding/contact material; no redistribution license asserted",
+      "review": "branding-rights-not-established"
+    },
+    {
+      "path": "/brand/favicon.svg",
+      "sha256": "9e983b4f649c25c6ca0623a50be1a6e705fd8f49f756638b980fa13b40575ab6",
+      "source": "https://deepseek.com/harness",
+      "license": "Third-party branding/contact material; no redistribution license asserted",
+      "review": "branding-rights-not-established"
+    },
+    {
+      "path": "/fonts/dm-sans-400.woff2",
+      "sha256": "4ab51eb2cd7305d177187908d6397474d4520663f6c6e572feb0a64f4fa80006",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/dm-sans-500.woff2",
+      "sha256": "19bf1984956517c35c2bd35b6cdedac12a21d6fcd3596c614ecdfb88b648909d",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/dm-sans-700.woff2",
+      "sha256": "35c5efa0e5daa52ee5c6500f5be354bf751fb65c4e49e1d6806c6eb5883e8fe9",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/montserrat-500.woff2",
+      "sha256": "2b53300fb9471520df2f4905847fb7a209879b2029ae893c05c6ee346b1320cd",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/montserrat-600.woff2",
+      "sha256": "d857325c360f7128b347ca924c1974967aaa886ba47dad22e4042d6c38b26a83",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/montserrat.woff2",
+      "sha256": "e66bcd2761ab6924b25ce70dafe10e57a39193c4fea1516730bd9cb5240af6c8",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/fragment-mono-latin.woff2",
+      "sha256": "4f4dc27f4a770c0d02fde800daa836c8adc0d1e423b28da74baaf0d1cc3ab96c",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/icons/excel.svg",
+      "sha256": "2f3f144010d254b1545ed821759a7c807606a64efca8bd90b18776bcbf15b1ff",
+      "source": "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-primitives/src/FileTypeIcon.tsx",
+      "license": "MIT (DeepSeek), see /icons/deepseek-MIT.txt",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/icons/html.svg",
+      "sha256": "72f25759a044b1aea488a054e204691e0cc70721c1e56c20559de61a87379a9a",
+      "source": "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-primitives/src/FileTypeIcon.tsx",
+      "license": "MIT (DeepSeek), see /icons/deepseek-MIT.txt",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/icons/markdown.svg",
+      "sha256": "0c6126931a57540050771620a440aba5ccc4d26e4511530ad3a24f123897637f",
+      "source": "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-primitives/src/FileTypeIcon.tsx",
+      "license": "MIT (DeepSeek), see /icons/deepseek-MIT.txt",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/icons/pdf.svg",
+      "sha256": "b0ab99cc812ef34d8eaa77c06b6832cc0e1f0246088b78875423b438d10f16a4",
+      "source": "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-primitives/src/FileTypeIcon.tsx",
+      "license": "MIT (DeepSeek), see /icons/deepseek-MIT.txt",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/icons/python.svg",
+      "sha256": "7f44d61e4227a9975fda03cbf2deb7257308441028e68a9742318a3f8ccb5a9b",
+      "source": "Original vector file illustration authored in this repository",
+      "license": "MIT (repository LICENSE)",
+      "review": "original-source"
+    },
+    {
+      "path": "/icons/typescript.svg",
+      "sha256": "b76dbefdea8f6afb47533c76286dc92b910fd28483e69fca53cef4cceaee5f23",
+      "source": "Original vector file illustration authored in this repository",
+      "license": "MIT (repository LICENSE)",
+      "review": "original-source"
+    },
+    {
+      "path": "/icons/word.svg",
+      "sha256": "1a083627487b74922f95c4fc4dae054d73510834e0ab2f72289d2dedf5808503",
+      "source": "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-primitives/src/FileTypeIcon.tsx",
+      "license": "MIT (DeepSeek), see /icons/deepseek-MIT.txt",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/images/qr-wechat.png",
+      "sha256": "10cc748b634b0d9ab65cf625ddd42dbef4f403b9be2e08e8f04581fa9f9fd924",
+      "source": "https://deepseek.com/harness",
+      "license": "Third-party branding/contact material; no redistribution license asserted",
+      "review": "branding-rights-not-established"
+    },
+    {
+      "path": "/fonts/dmsans-OFL.txt",
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/montserrat-OFL.txt",
+      "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/fonts/fragmentmono-OFL.txt",
+      "sha256": "ef14426248ca0404eae1ae65e61802b1627b5ec33aab117fb36edf401a81636e",
+      "source": "https://github.com/google/fonts",
+      "license": "SIL OFL 1.1; local accompanying notice",
+      "review": "source-attributed"
+    },
+    {
+      "path": "/icons/deepseek-MIT.txt",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+      "source": "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/LICENSE",
+      "license": "MIT (DeepSeek)",
+      "review": "source-attributed"
+    }
+  ]
+}
