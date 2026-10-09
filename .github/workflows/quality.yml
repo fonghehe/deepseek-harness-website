@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
-      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version-file: .node-version
@@ -39,7 +39,7 @@ jobs:
       - name: Read production Pages URL
         id: pages
         if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
-        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Install dependencies, fonts and browsers
         run: node tests/tools/ci-pipeline.mjs setup
       - name: Verify the Node website, browsers and resource budgets
@@ -53,7 +53,7 @@ jobs:
           SITE_URL: ${{ steps.pages.outputs.base_url && format('{0}/', steps.pages.outputs.base_url) || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
       # out/index.html is the Next.js landing page; VitePress stays under out/docs/.
       - name: Upload the verified website and nested documentation
-        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
         with:
           name: github-pages
