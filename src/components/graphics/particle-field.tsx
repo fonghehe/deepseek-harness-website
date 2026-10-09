@@ -117,7 +117,10 @@ export function ParticleField({ variant = 'hero' }: { variant?: 'hero' | 'cta' }
     };
     element.addEventListener('webglcontextlost', lost);
     element.addEventListener('webglcontextrestored', restored);
-    const observer = new IntersectionObserver(([entry]) => {
+    const observer = new IntersectionObserver((entries) => {
+      // A quick scroll can queue several transitions for this canvas in one delivery.
+      const entry = entries.at(-1);
+      if (!entry) return;
       visible = entry.isIntersecting;
       synchronize();
     });

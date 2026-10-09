@@ -1,6 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+
+const subscribeReady = () => () => {};
 
 export function CopyCommand({
   command,
@@ -12,14 +14,18 @@ export function CopyCommand({
   copiedLabel: string;
 }) {
   const [copied, setCopied] = useState(false);
+  const ready = useSyncExternalStore(
+    subscribeReady,
+    () => true,
+    () => false,
+  );
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const button = useRef<HTMLButtonElement>(null);
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    return () => {
       if (timer.current) clearTimeout(timer.current);
-    },
-    [],
-  );
+    };
+  }, []);
   async function copy() {
     let success = false;
     try {
@@ -50,7 +56,12 @@ export function CopyCommand({
       <pre dir="ltr">
         <code>{command}</code>
       </pre>
-      <button ref={button} onClick={copy} aria-label={copied ? copiedLabel : label}>
+      <button
+        ref={button}
+        disabled={!ready}
+        onClick={copy}
+        aria-label={copied ? copiedLabel : label}
+      >
         {copied ? copiedLabel : label}
       </button>
       <output className="sr-only" aria-live="polite" aria-atomic="true">

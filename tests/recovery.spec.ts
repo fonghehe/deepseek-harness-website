@@ -30,3 +30,39 @@ test('fallback clipboard keeps focus and announces a successful copy', async ({ 
   await expect(command.locator('output')).not.toBeEmpty();
   await expect(command.locator('output')).toHaveAttribute('aria-live', 'polite');
 });
+
+test('batched viewport transitions keep graphics and demonstrations in sync', async ({ page }) => {
+  await page.addInitScript(() => {
+    const Observer = window.IntersectionObserver;
+    window.IntersectionObserver = class extends Observer {
+      constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
+        super((entries, observer) => {
+          const transitions = entries.flatMap((entry) => {
+            if (!['CANVAS', 'FIGURE'].includes(entry.target.tagName)) return [entry];
+            // A quick scroll can queue the previous and current state in one delivery.
+            const previous = new Proxy(entry, {
+              get(record, property) {
+                if (property === 'isIntersecting') return !record.isIntersecting;
+                if (property === 'time') return record.time - 1;
+                return Reflect.get(record, property, record);
+              },
+            });
+            return [previous, entry];
+          });
+          callback(transitions, observer);
+        }, options);
+      }
+    };
+  });
+  await page.goto('/harness/');
+  await expect(page.locator('.particle-hero')).toHaveAttribute('data-status', 'ready');
+  const demo = page.locator('.plugins-frame');
+  await demo.evaluate((element) =>
+    element.scrollIntoView({ block: 'center', behavior: 'instant' }),
+  );
+  await expect(demo).toHaveAttribute('data-running', 'true');
+  await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+  await expect(demo).toHaveAttribute('data-running', 'false');
+  await page.locator('.ecosystem').scrollIntoViewIfNeeded();
+  await expect(page.locator('.particle-cta')).toHaveAttribute('data-status', 'ready');
+});

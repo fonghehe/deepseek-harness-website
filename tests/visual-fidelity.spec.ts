@@ -1,7 +1,7 @@
 import { locales } from '../src/i18n';
 import { expect, test } from '@playwright/test';
 
-// Measurements from the reference at 1265 CSS pixels, after fonts/entry animation settle.
+// Reference geometry at 1265 CSS pixels; Ubuntu has different verified font advances.
 test('desktop geometry follows the reference typography and window dimensions', async ({
   page,
 }) => {
@@ -9,8 +9,9 @@ test('desktop geometry follows the reference typography and window dimensions', 
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/en/harness/');
   await page.evaluate(() => document.fonts.ready);
+  const headingWidth = process.platform === 'linux' ? 472.875 : 478.648;
   const measurements = [
-    ['h1', { x: 393.172, y: 204, width: 478.648, height: 120 }],
+    ['h1', { x: (1265 - headingWidth) / 2, y: 204, width: headingWidth, height: 120 }],
     ['.desktop-window', { x: 122.5, y: 574.805, width: 1020, height: 612 }],
     ['.capabilities-card', { x: 72, y: 1614.805, width: 544.5, height: 517.578 }],
   ] as const;

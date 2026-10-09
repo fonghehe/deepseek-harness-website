@@ -14,7 +14,12 @@ concurrency:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    # Visual fixtures use Ubuntu 24.04 font rendering; keep the runner release stable.
+    runs-on: ubuntu-24.04
+    container:
+      # Keep this version aligned with Playwright in pnpm-lock.yaml.
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host
     timeout-minutes: 40
     permissions:
       contents: read
@@ -35,20 +40,15 @@ jobs:
         id: pages
         if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - run: pnpm install --frozen-lockfile
-      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
-      - run: pnpm exec playwright install --with-deps chromium firefox webkit
+      - name: Install dependencies, fonts and browsers
+        run: node tests/tools/ci-pipeline.mjs setup
       - name: Verify the Node website, browsers and resource budgets
-        run: pnpm verify:full
+        run: node tests/tools/ci-pipeline.mjs node
+        env:
+          # configure-pages exports true for later steps; this verifies the Node server.
+          GITHUB_PAGES: 'false'
       - name: Export, check and test the exact Pages artifact
-        run: |
-          pnpm build:pages
-          pnpm check:pages
-          E2E_PAGES=1 E2E_PORT=3109 pnpm exec playwright test --project=chromium
-          pnpm perf:pages
+        run: node tests/tools/ci-pipeline.mjs pages
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url && format('{0}/', steps.pages.outputs.base_url) || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
       # out/index.html is the Next.js landing page; VitePress stays under out/docs/.

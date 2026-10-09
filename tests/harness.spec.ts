@@ -81,7 +81,23 @@ test('desktop downloads and floating scroll navigation retain official destinati
 
 test('both developer commands can be copied', async ({ page, context }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-  await page.goto('/harness/');
+  let releaseScripts!: () => void;
+  const scriptsReady = new Promise<void>((resolve) => (releaseScripts = resolve));
+  await page.route('**/_next/static/chunks/*.js', async (route) => {
+    await scriptsReady;
+    await route.continue();
+  });
+  try {
+    await page.goto('/harness/', { waitUntil: 'commit' });
+    // Server-rendered commands remain readable while interaction waits for hydration.
+    await expect(page.locator('.copy-command').first().locator('code')).toHaveText(
+      'npx @deepseek-ai/dsh web',
+    );
+    await expect(page.getByRole('button', { name: '复制', exact: true }).first()).toBeDisabled();
+  } finally {
+    releaseScripts();
+  }
+  await expect(page.getByRole('button', { name: '复制', exact: true }).first()).toBeEnabled();
   await page.getByRole('button', { name: '复制', exact: true }).first().click();
   await expect
     .poll(() => page.evaluate(() => navigator.clipboard.readText()))

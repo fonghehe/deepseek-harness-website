@@ -7,9 +7,9 @@ export default defineConfig({
   testMatch: pages ? '**/pages.spec.ts' : '**/*.spec.ts',
   testIgnore: pages ? [] : '**/pages.spec.ts',
   outputDir: pages ? './test-results/pages' : './test-results/e2e',
-  snapshotPathTemplate: '{testDir}/fixtures/visual/{arg}{ext}',
+  snapshotPathTemplate: '{testDir}/fixtures/visual/{platform}/{arg}{ext}',
   expect: { toHaveScreenshot: { maxDiffPixelRatio: 0.015, threshold: 0.2, scale: 'css' } },
-  workers: 2,
+  workers: process.env.CI ? 1 : 2,
   timeout: 30_000,
   reporter: process.env.CI ? [['list'], ['html', { open: 'never' }]] : 'list',
   use: {

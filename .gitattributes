@@ -1,0 +1,2 @@
+# Static input hashes cover exact source bytes, including original line endings.
+public/** -text

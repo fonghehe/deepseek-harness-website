@@ -16,9 +16,14 @@ export function useDemoScene(element: HTMLElement | null, threshold = 0.1) {
     updateVisibility();
     preference.addEventListener('change', updateMotion);
     document.addEventListener('visibilitychange', updateVisibility);
-    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), {
-      threshold,
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Use the current state when initial observation and scrolling share a delivery.
+        const entry = entries.at(-1);
+        if (entry) setVisible(entry.isIntersecting);
+      },
+      { threshold },
+    );
     if (element) observer.observe(element.querySelector('figure') || element);
     return () => {
       observer.disconnect();

@@ -49,6 +49,12 @@ Browser tests require a production build. `verify:full` runs the deterministic p
 
 Tools live in `tests/tools/`; inputs and reference images live in `tests/fixtures/`. Generated reports go to ignored `test-results/` and `playwright-report/`. GitHub Actions runs the same commands. Record local results separately from remote CI and deployment checks. External-link failures may need a retry if the remote service is unavailable.
 
+Visual fixtures live in `tests/fixtures/visual/<platform>/`: `darwin` for local macOS and `linux` for Ubuntu 24.04 in CI. CI uses the versioned Playwright Noble container with DejaVu system fonts; keep its version aligned with `pnpm-lock.yaml`. System fonts and font rasterization vary by platform, so compare each run with its own reviewed fixtures. Keep the screenshot error thresholds unchanged. When updating fixtures, inspect the actual and difference images on the corresponding platform; do not regenerate them just to clear a failing check.
+
+To run the CI verification locally before committing, start Docker and run `pnpm verify:ci`. It copies tracked and non-ignored working files into a temporary directory, uses the workflow's exact amd64 Playwright image and the configured Node/pnpm versions, and runs the same setup, full Node verification and Pages checks through `tests/tools/ci-pipeline.mjs`. All three browsers and both performance budgets must pass. CI uses one browser worker to limit contention from decorative graphics. The pipeline aligns Firefox's existing home directory ownership with the container user. It preserves the home path and the working checkout's builds and servers.
+
+Local CI reports are copied to ignored `test-results/ci/`; a failed temporary workspace is retained for diagnosis. The default Pages URL is a generic repository-path example. Set `SITE_URL` to your complete deployment URL when checking production metadata. This command verifies the website and export locally; publication still uses GitHub Actions.
+
 ## Find the source
 
 `src/components/landing-page.tsx` composes the page. Component directories are relative to `src/components/`:

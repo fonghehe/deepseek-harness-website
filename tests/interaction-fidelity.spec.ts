@@ -1,7 +1,11 @@
 import { expect, test, type Page } from '@playwright/test';
 
 async function stage(page: Page, selector: string, time: number) {
-  await page.locator(selector).scrollIntoViewIfNeeded();
+  // Playback requires a foreground page and an intersecting figure.
+  await page.bringToFront();
+  await page
+    .locator(selector)
+    .evaluate((element) => element.scrollIntoView({ block: 'center', behavior: 'instant' }));
   await expect(page.locator(selector)).toHaveAttribute('data-running', 'true');
   await page.locator(selector).evaluate((element, milliseconds) => {
     for (const animation of element.getAnimations({ subtree: true })) {
@@ -157,6 +161,7 @@ test('CTA shader links and actually paints translucent tiles', async ({ page }) 
   await page.locator('.ecosystem').scrollIntoViewIfNeeded();
   const canvas = page.locator('.particle-cta');
   await expect(canvas).toBeVisible();
+  await expect(canvas).toHaveAttribute('data-status', 'ready');
   await expect(canvas).toHaveAttribute('data-gl-error', '0');
   await expect
     .poll(async () => Number(await canvas.getAttribute('data-painted-pixels')))
@@ -166,16 +171,20 @@ test('CTA shader links and actually paints translucent tiles', async ({ page }) 
 test('file carousel advances while the diff panel remains stationary', async ({ page }) => {
   await page.goto('/harness/');
   await stage(page, '.deliverables-frame', 1000);
-  const before = await page.locator('.deliverables-file-track').boundingBox();
-  const diffBefore = await page.locator('.deliverables-diff-panel').boundingBox();
-  const frameBefore = await page.locator('.deliverables-frame').boundingBox();
+  const sample = () =>
+    page.locator('.deliverables-frame').evaluate((frame) => {
+      const origin = frame.getBoundingClientRect().y;
+      return {
+        files: frame.querySelector('.deliverables-file-track')!.getBoundingClientRect().y - origin,
+        diff: frame.querySelector('.deliverables-diff-panel')!.getBoundingClientRect().y - origin,
+      };
+    });
+  const before = await sample();
   await stage(page, '.deliverables-frame', 5500);
-  const after = await page.locator('.deliverables-file-track').boundingBox();
-  const diffAfter = await page.locator('.deliverables-diff-panel').boundingBox();
-  const frameAfter = await page.locator('.deliverables-frame').boundingBox();
-  expect(after!.y).toBeLessThan(before!.y - 50);
-  // The card's scroll entrance can still move the entire frame between samples.
-  expect(diffAfter!.y - frameAfter!.y).toBeCloseTo(diffBefore!.y - frameBefore!.y, 0);
+  const after = await sample();
+  expect(after.files).toBeLessThan(before.files - 50);
+  // Sample both offsets in one frame so entrance/scroll movement cannot skew the comparison.
+  expect(after.diff).toBeCloseTo(before.diff, 0);
 });
 
 test('workflow reveals arguments, completion and all three scheduled scenarios', async ({
