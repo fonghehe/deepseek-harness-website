@@ -46,17 +46,28 @@ test('Pages hydrates, loads static inputs and switches all languages within its 
     await menu.getByRole('link', { name: locales.en.label, exact: true }).click();
     await expect(page).toHaveURL(new RegExp(`${prefix}/en/harness/\\?campaign=pages#downloads$`));
   }
+  // Reduced motion leaves later carousel cards offscreen; load their lazy images for this asset audit.
+  await page.locator('img').evaluateAll((images) => {
+    for (const image of images) {
+      if (image instanceof HTMLImageElement) image.loading = 'eager';
+    }
+  });
+  await expect
+    .poll(() =>
+      page
+        .locator('img')
+        .evaluateAll(
+          (images) =>
+            images.length > 0 &&
+            images.every(
+              (image) =>
+                image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0,
+            ),
+        ),
+    )
+    .toBe(true);
   expect(missing).toEqual([]);
   expect(errors).toEqual([]);
-  expect(
-    await page
-      .locator('img')
-      .evaluateAll((images) =>
-        images.every(
-          (image) => image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0,
-        ),
-      ),
-  ).toBe(true);
 });
 
 test('Pages docs open English and retain prefix, article, SEO and RTL after navigation', async ({

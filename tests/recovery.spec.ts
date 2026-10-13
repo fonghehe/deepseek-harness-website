@@ -1,5 +1,31 @@
 import { expect, test } from '@playwright/test';
 
+test('denied clipboard APIs leave the command readable without reporting success', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText: () => Promise.reject(new Error('Denied')) },
+    });
+    document.execCommand = () => {
+      throw new Error('Denied');
+    };
+  });
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto('/en/harness/');
+  const command = page.locator('.copy-command').first();
+  const button = command.locator('button');
+  const label = await button.getAttribute('aria-label');
+  await button.click();
+  await expect(button).toBeFocused();
+  await expect(button).toHaveAttribute('aria-label', label!);
+  await expect(command.locator('output')).toBeEmpty();
+  await expect(command.locator('code')).toHaveText('npx @deepseek-ai/dsh web');
+  await expect(page.locator('textarea')).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
 test('missing website and documentation recover in Arabic with a real 404', async ({ page }) => {
   const response = await page.goto('/ar/missing/');
   expect(response?.status()).toBe(404);

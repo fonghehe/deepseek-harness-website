@@ -27,11 +27,14 @@ export function CopyCommand({
     };
   }, []);
   async function copy() {
+    const trigger = button.current;
+    const isCurrent = () => trigger?.isConnected && button.current === trigger;
     let success = false;
     try {
       await navigator.clipboard.writeText(command);
       success = true;
     } catch {
+      if (!isCurrent()) return;
       const field = document.createElement('textarea');
       field.value = command;
       field.style.position = 'fixed';
@@ -40,12 +43,15 @@ export function CopyCommand({
       field.select();
       try {
         success = document.execCommand('copy');
+      } catch {
+        // Some browsers reject both clipboard APIs; leave the command selectable.
+        success = false;
       } finally {
         field.remove();
         button.current?.focus({ preventScroll: true });
       }
     }
-    if (success) {
+    if (success && isCurrent()) {
       setCopied(true);
       if (timer.current) clearTimeout(timer.current);
       timer.current = setTimeout(() => setCopied(false), 1600);

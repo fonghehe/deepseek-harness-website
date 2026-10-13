@@ -42,22 +42,23 @@ export function Header({ locale, text }: { locale: Locale; text: HeaderLabels })
   useEffect(() => {
     const element = bar.current!;
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const label = document.querySelector('[data-hero-preview-label]');
+    const visibility = new IntersectionObserver((entries) => {
+      const entry = entries.at(-1);
+      if (entry) setPreviewVisible(entry.isIntersecting);
+    });
+    if (label) visibility.observe(label);
     let animation: AnimationPlaybackControls | undefined;
     let previousTarget = '';
     const update = () => {
       const active = window.scrollY > 80;
-      setScrolled(active);
-      const label = document.querySelector('[data-hero-preview-label]');
-      if (label) {
-        const bounds = label.getBoundingClientRect();
-        setPreviewVisible(bounds.bottom > 0 && bounds.top < innerHeight);
-      }
       const width = active ? (innerWidth >= 1560 ? 1180 : 980) : 1280;
       const immediate = motion.matches || innerWidth < 768;
       const targetKey = `${width}:${active}:${immediate}`;
       if (targetKey === previousTarget) return;
       const initial = previousTarget === '';
       previousTarget = targetKey;
+      setScrolled(active);
       animation?.stop();
       const target = {
         maxWidth: `${width}px`,
@@ -73,6 +74,7 @@ export function Header({ locale, text }: { locale: Locale; text: HeaderLabels })
     motion.addEventListener('change', update);
     return () => {
       animation?.stop();
+      visibility.disconnect();
       window.removeEventListener('scroll', update);
       window.removeEventListener('resize', update);
       motion.removeEventListener('change', update);

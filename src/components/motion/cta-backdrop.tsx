@@ -1,20 +1,19 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 /** Static 90px connections and three diffuse lights, maintained as vector/CSS source. */
 export function CtaBackdrop() {
   const grid = useRef<SVGSVGElement>(null);
-  const [offset, setOffset] = useState({ x: 0, y: -20 });
+  const pattern = useRef<SVGPatternElement>(null);
   useEffect(() => {
     const node = grid.current;
-    if (!node) return;
+    const connections = pattern.current;
+    if (!node || !connections) return;
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
-      setOffset({
-        x: (width - Math.ceil(width / 90) * 90) / 2,
-        y: (height - Math.ceil(height / 90) * 90) / 2,
-      });
+      connections.setAttribute('x', String((width - Math.ceil(width / 90) * 90) / 2));
+      connections.setAttribute('y', String((height - Math.ceil(height / 90) * 90) / 2));
     });
     observer.observe(node);
     return () => observer.disconnect();
@@ -24,12 +23,13 @@ export function CtaBackdrop() {
       <svg ref={grid} className="cta-grid" width="100%" height="100%">
         <defs>
           <pattern
+            ref={pattern}
             id="cta-connections"
             patternUnits="userSpaceOnUse"
             width="90"
             height="90"
-            x={offset.x}
-            y={offset.y}
+            x="0"
+            y="-20"
           >
             <path
               d="M10 0H80M0 10V80"

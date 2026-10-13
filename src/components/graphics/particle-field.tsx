@@ -1,6 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import {
+  subscribePageVisibility,
+  useDesktopViewport,
+  useReducedMotion,
+} from '@/hooks/browser-environment';
 import type { CanvasScene } from './three-renderer';
 import { scheduleScene } from './schedule-scene';
 
@@ -13,19 +18,9 @@ declare global {
 /** Lazy Three.js scenes share visibility gating and a single capped render loop. */
 export function ParticleField({ variant = 'hero' }: { variant?: 'hero' | 'cta' }) {
   const canvas = useRef<HTMLCanvasElement>(null);
-  const [enabled, setEnabled] = useState(false);
-  useEffect(() => {
-    const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    const desktop = matchMedia('(min-width: 768px)');
-    const update = () => setEnabled(!motion.matches && (variant === 'hero' || desktop.matches));
-    update();
-    motion.addEventListener('change', update);
-    desktop.addEventListener('change', update);
-    return () => {
-      motion.removeEventListener('change', update);
-      desktop.removeEventListener('change', update);
-    };
-  }, [variant]);
+  const reduced = useReducedMotion();
+  const desktop = useDesktopViewport();
+  const enabled = !reduced && (variant === 'hero' || desktop);
   useEffect(() => {
     const element = canvas.current;
     if (!enabled || !element) return;
@@ -128,7 +123,7 @@ export function ParticleField({ variant = 'hero' }: { variant?: 'hero' | 'cta' }
     const dimensions = new ResizeObserver(resize);
     dimensions.observe(element);
     resize();
-    document.addEventListener('visibilitychange', synchronize);
+    const unsubscribeVisibility = subscribePageVisibility(synchronize);
     return () => {
       disposed = true;
       cancelAnimationFrame(frame);
@@ -136,7 +131,7 @@ export function ParticleField({ variant = 'hero' }: { variant?: 'hero' | 'cta' }
       scene?.dispose();
       observer.disconnect();
       dimensions.disconnect();
-      document.removeEventListener('visibilitychange', synchronize);
+      unsubscribeVisibility();
       element.removeEventListener('webglcontextlost', lost);
       element.removeEventListener('webglcontextrestored', restored);
     };

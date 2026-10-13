@@ -9,9 +9,10 @@ import type { Locale } from '@/i18n';
 export function LocaleMenu({ locale }: { locale: Locale }) {
   const disclosure = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
-    const close = (event: KeyboardEvent | PointerEvent) => {
-      const element = disclosure.current;
-      if (!element?.open) return;
+    const element = disclosure.current;
+    if (!element) return;
+    const close = (event: KeyboardEvent | PointerEvent | FocusEvent) => {
+      if (!element.open) return;
       if (event instanceof KeyboardEvent) {
         if (event.key !== 'Escape') return;
         event.preventDefault();
@@ -19,9 +20,11 @@ export function LocaleMenu({ locale }: { locale: Locale }) {
         element.querySelector('summary')?.focus();
       } else if (!element.contains(event.target as Node)) element.open = false;
     };
+    document.addEventListener('focusin', close);
     document.addEventListener('keydown', close);
     document.addEventListener('pointerdown', close);
     return () => {
+      document.removeEventListener('focusin', close);
       document.removeEventListener('keydown', close);
       document.removeEventListener('pointerdown', close);
     };

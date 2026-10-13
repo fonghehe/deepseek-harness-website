@@ -1,6 +1,96 @@
 import { expect, test } from '@playwright/test';
 import { messages } from '../src/i18n';
 
+test('leaving language links keeps Escape focus on the active download menu', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/en/harness/');
+  const language = page.locator('.desktop-nav .site-locale');
+  await language.getByRole('button').press('Enter');
+  await language.getByRole('link').last().focus();
+  await expect(language).toHaveAttribute('open', '');
+  const downloads = page.locator('.hero-actions .download-menu');
+  const toggle = downloads.getByRole('button');
+  await toggle.focus();
+  await expect(toggle).toBeFocused();
+  await toggle.press('ArrowDown');
+  await expect(downloads.getByRole('menuitem').first()).toBeFocused();
+  await page.keyboard.press('Escape');
+  await expect(downloads.getByRole('menu')).toBeHidden();
+  await expect(toggle).toBeFocused();
+  await expect(language).not.toHaveAttribute('open', '');
+});
+
+test('live motion preferences preserve user pause and restore eligible demonstrations', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/en/harness/');
+  const card = page.locator('.capabilities-card').filter({ has: page.locator('.workflow-frame') });
+  const figure = card.locator('figure');
+  await card.evaluate((element) => element.scrollIntoView({ block: 'center' }));
+  await expect(card).toHaveCSS('transform', 'none');
+  await card.hover();
+  await expect(figure).toHaveAttribute('data-running', 'true');
+  await card.getByRole('button', { name: messages.en.Harness.Capabilities.pauseAnimation }).click();
+  await expect(figure).toHaveAttribute('data-running', 'false');
+
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('canvas')).toHaveCount(0);
+  for (const demo of await page.locator('.capabilities-card figure').all()) {
+    await expect(demo).toHaveAttribute('data-running', 'false');
+  }
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await expect(page.locator('canvas')).toHaveCount(2);
+  await expect(figure).toHaveAttribute('data-running', 'false');
+  await expect(card.getByRole('button')).toHaveAttribute('aria-pressed', 'true');
+  await card.getByRole('button', { name: messages.en.Harness.Capabilities.playAnimation }).click();
+  await card.evaluate((element) => element.scrollIntoView({ block: 'center' }));
+  await expect(figure).toHaveAttribute('data-running', 'true');
+});
+
+test('simulated foreground changes pause and resume without resetting the animation', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/en/harness/');
+  const figure = page.locator('.workflow-frame');
+  await figure.evaluate((element) => element.scrollIntoView({ block: 'center' }));
+  await expect(figure).toHaveAttribute('data-running', 'true');
+  const initial = await figure.evaluate((element) =>
+    Number(element.querySelector('.workflow-story')!.getAnimations()[0].currentTime),
+  );
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, value: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect(figure).toHaveAttribute('data-running', 'false');
+  await expect
+    .poll(() =>
+      figure.evaluate(
+        (element) => element.querySelector('.workflow-story')!.getAnimations()[0].playState,
+      ),
+    )
+    .toBe('paused');
+  const paused = await figure.evaluate((element) =>
+    Number(element.querySelector('.workflow-story')!.getAnimations()[0].currentTime),
+  );
+  expect(paused).toBeGreaterThanOrEqual(initial);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, value: false });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect(figure).toHaveAttribute('data-running', 'true');
+  await expect
+    .poll(() =>
+      figure.evaluate((element) =>
+        Number(element.querySelector('.workflow-story')!.getAnimations()[0].currentTime),
+      ),
+    )
+    .toBeGreaterThan(paused);
+});
+
 test('language selection remains until header collapse and matches scrolled control heights', async ({
   page,
 }) => {

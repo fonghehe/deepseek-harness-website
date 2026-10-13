@@ -8,8 +8,8 @@ yarn-error.log*
 
 # Next.js, VitePress and deployment output
 .next/
-.next-profiles/
-.next-preview/
+# Include isolated builds selected with NEXT_DIST_DIR.
+/.next-*/
 out/
 dist/
 build/
@@ -76,6 +76,9 @@ CLAUDE.local.md
 .claude/*
 !.claude/CLAUDE.md
 !.claude/settings.json
+
+# Local optimization notes only; keep shared agent guides and reusable plans
+/docs/local-optimization/
 
 # Isolated GitHub Pages build input
 .pages-build/

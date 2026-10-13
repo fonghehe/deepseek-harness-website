@@ -78,6 +78,8 @@ The language menu stays visible through the first 80px of scroll. When the heade
 
 The four CSS demos run for 22s (plugins), 17.5s (files), 11s (workflow) and 15s (trace). `animation-play-state` preserves their progress when paused. Workflow scenarios change at the end of a cycle. `use-demo-scene.ts` combines viewport visibility, foreground state, reduced motion and user pause.
 
+`src/hooks/browser-environment.ts` shares media-query and page-visibility subscriptions through `useSyncExternalStore`. Each signal attaches one native listener while it has subscribers and removes it when the last subscriber leaves. Server snapshots keep decoration inactive during hydration. Intersection observers remain local to each demo; returning to the foreground or changing motion preferences preserves the user's pause choice. Particle eligibility is derived from the same motion and viewport signals. The CTA grid updates its SVG pattern offsets in a resize observer without a React state update.
+
 Framer Motion handles header springs, section entrances and scroll-linked perspective. Three.js draws the hero fluid mesh and ecosystem tiles. Scene modules load when visible and in the foreground, compile shaders asynchronously and render at no more than 30fps using CSS-pixel resolution. Unmount releases geometry, materials, textures and renderers. Reduced motion skips GPU modules; CSS backgrounds remain if WebGL is unavailable. The CTA canvas is disabled on mobile.
 
 For visual changes, compare desktop and mobile layout, fonts, spacing, menu behavior and each demo stage. Check keyboard focus, no-JavaScript content and reduced motion when affected. A component build alone does not establish visual fidelity.
