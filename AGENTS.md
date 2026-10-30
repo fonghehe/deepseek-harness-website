@@ -59,7 +59,7 @@ Choose checks to match the change: config/docs-only edits usually need syntax, p
 
 ## Agent and editor configuration
 
-`AGENTS.md` is the canonical shared instruction file. `AGENT.md` is a human-readable compatibility entry; singular filenames are not assumed to be discovered automatically. `.cursor/rules/project.mdc` points to this file. Keep shared editor settings/tasks/debug configurations under `.vscode`, and project rules under `.cursor/rules`. Keep secrets, personal overrides, machine paths and runtime state out of committed configuration. Cursor ignore files control context/indexing; they do not replace filesystem permissions or protect against terminal/MCP access.
+`AGENTS.md` is the canonical shared instruction file. `AGENT.md` is a human-readable compatibility entry; singular filenames are not assumed to be discovered automatically. `.cursor/rules/project.mdc` points to this file. Keep shared editor settings/tasks/debug configurations under `.vscode`, and project rules under `.cursor/rules`. Keep secrets, personal overrides, machine paths and runtime state out of committed configuration. Editor ignore files control context/indexing; they do not replace filesystem permissions or protect against terminal/MCP access.
 
 ## Additional quality contracts
 
@@ -86,5 +86,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - GitHub Pages uses `pnpm build:pages` and `pnpm check:pages` with the same complete `SITE_URL`. Keep `.pages-build` temporary and `out` ignored; never alter the working source or a running server during export. Preserve the normal Node.js deployment and its document cache.
 - Update website, all five localized docs, navigation, descriptions and SEO when adding languages. Use registry-derived counts in validation and tests.
-- Keep agent rules centralized here; shared Claude/Cursor/Codex settings must not override personal models, providers, credentials or grant unrestricted tool access.
+- Keep shared rules centralized here; tool settings must not override personal models, providers, credentials or grant unrestricted tool access.
 - Original code is MIT; consult `NOTICE.md` for third-party branding and assets. Keep contribution/reporting instructions and GitHub templates focused on this website.

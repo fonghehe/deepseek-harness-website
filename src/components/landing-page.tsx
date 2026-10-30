@@ -65,8 +65,7 @@ export async function LandingPage({ locale }: { locale: Locale }) {
         dangerouslySetInnerHTML={{ __html: scriptJson(structuredData) }}
       />
       <Header locale={locale} text={headerLabels} />
-      <ScrollEntrances />
-      <main>
+      <ScrollEntrances>
         <section className="hero" id="downloads">
           <ParticleField />
           <div className="hero-glow" aria-hidden="true" />
@@ -144,7 +143,7 @@ export async function LandingPage({ locale }: { locale: Locale }) {
                 copiedLabel={index.harnessHeroCopied}
               />
             </div>
-            <div data-entrance="initial" data-reveal="card" style={{ transitionDelay: '0.1s' }}>
+            <div data-entrance="initial" data-reveal="card" data-entrance-delay="0.1">
               <h3>
                 <HeadingText text={index.harnessUse2Label} />
               </h3>
@@ -229,7 +228,7 @@ export async function LandingPage({ locale }: { locale: Locale }) {
             </div>
           </div>
         </section>
-      </main>
+      </ScrollEntrances>
       <Footer locale={locale} text={index} />
     </>
   );

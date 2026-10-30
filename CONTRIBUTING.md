@@ -1,47 +1,39 @@
 # Contributing
 
-You can help with page fixes, accessibility, documentation and translations. This repository maintains an independent recreation of the DeepSeek Harness website. Report agent or desktop-app issues in the [upstream repository](https://github.com/deepseek-ai/deepseek-harness).
+Contributions to website behavior, accessibility, documentation and translations are welcome. This repository recreates the DeepSeek Harness website; report product runtime or desktop-app issues in the [upstream repository](https://github.com/deepseek-ai/deepseek-harness).
 
-For setup, commands and publishing, read [DEVELOPMENT.md](DEVELOPMENT.md). Coding agents use [AGENTS.md](AGENTS.md).
+For setup and publishing, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
-## Prepare a pull request
+## Prepare a change
 
-Describe the problem and the resulting behavior. Keep changes small; discuss large design or architecture changes in an issue first. Preserve working sections and use maintained source rather than captured HTML or compiled upstream code.
+Keep changes focused and describe the problem, resulting behavior and checks run. Discuss large design or architecture changes in an issue first. Preserve the current sections and maintain React/CSS/WebGL source instead of captured HTML or compiled upstream code.
 
-For visual changes, include before/after screenshots or a recording showing desktop, mobile and relevant RTL states. List the checks you ran and anything still unverified.
+Run `pnpm verify` for source and documentation changes. Add these checks when relevant:
 
-| Change                        | Checks                                                                       |
-| ----------------------------- | ---------------------------------------------------------------------------- |
-| Any maintained source or docs | `pnpm verify`                                                                |
-| UI or runtime behavior        | Relevant browser tests after a production build                              |
-| Payload or GPU rendering      | `pnpm perf:check`                                                            |
-| Product destinations          | `pnpm check:links --strict`                                                  |
-| GitHub Pages export           | `pnpm build:pages` and `pnpm check:pages`, with the same complete `SITE_URL` |
+| Change         | Additional checks                                                           |
+| -------------- | --------------------------------------------------------------------------- |
+| UI or runtime  | Browser regressions after a production build                                |
+| Visual layout  | Desktop, mobile and RTL screenshots or a recording                          |
+| Payload or GPU | `pnpm perf:check`                                                           |
+| Product URLs   | `pnpm check:links --strict`                                                 |
+| Static export  | `pnpm build:pages` and `pnpm check:pages` with the same complete `SITE_URL` |
 
-Use Node from `.node-version`, pnpm from `package.json` and the committed lockfile. Browser tests use Playwright Chromium, Firefox and WebKit; check a real phone separately. Older Node and browser versions are not covered by the project's compatibility checks.
+Use the declared Node/pnpm versions and committed lockfile. Review screenshot and performance baseline changes; do not update them only to clear a failure. Separate local results from remote CI, deployment and real-device checks. List anything still unverified.
 
-## Add or review a translation
+## Translate or review
 
-`src/i18n/locales.json` lists supported languages. A new language needs a Harness dictionary, capability cards, accessible labels, navigation, metadata descriptions and all five articles. Preserve placeholders, rich-text tags, commands and filenames. Keep code LTR inside Arabic, Hebrew, Persian and Urdu pages.
+`src/i18n/locales.json` lists supported languages. A new language needs website messages, capability cards, accessible labels, metadata, navigation and all five articles. Keep placeholders, source IDs, technical commands and filenames intact. Code stays LTR inside RTL pages.
 
-Check long text, line wrapping, keyboard focus and mobile menus. `docs/glossary.json` records shared terminology. `docs/translation-reviews.json` records native-language review status; all editions currently need review. Add reviewer and evidence only after a review of the website, labels and articles.
+Check wrapping, long labels, mobile menus, keyboard focus and mixed-direction text. Use `docs/glossary.json` for terminology. Record a native-language review in `docs/translation-reviews.json` only after checking the website and articles, with reviewer and evidence. An issue should name the language, page or key, and proposed wording.
 
-A translation issue should name the language, page or key, and proposed wording. Include a narrow-screen example when the problem is wrapping or overflow.
+## Report a problem
 
-## Record manual checks
+Include reproduction steps, browser/version, device/OS, locale, viewport and motion preference. Attach a narrow-screen example for wrapping or overflow. Check keyboard order, Escape, focus recovery, clipboard feedback and animation pause when relevant. Screen readers and real phones need manual checks.
 
-Include the browser/version, device/OS, locale, viewport and motion preference. Check keyboard order, Escape, focus recovery and clipboard announcements. Chinese footers use WeChat QR; other languages link to DeepSeek on X.
+Report sensitive issues privately through [SECURITY.md](SECURITY.md). Do not post credentials or private records. Keep feedback specific and respectful.
 
-Use a screen reader to check long labels and mixed-direction commands, and a real phone to check scrolling and animation. Automated axe and screenshot checks cover selected cases; document what you checked manually.
+## License and releases
 
-## Releases and issue reports
+Original contributions use the [MIT license](LICENSE). Check [NOTICE.md](NOTICE.md) before redistributing third-party branding and assets.
 
-Dependency updates should use focused pull requests. Before a versioned release, run the complete pipeline and record remaining limitations. Maintainers handle publishing and repository settings. The project supports both Next.js server and GitHub Pages delivery.
-
-Good first contributions include a translation review, reproducible keyboard issue, mobile wrapping fix or documentation example with source references. Maintainers use labels such as `good first issue`, `translation`, `accessibility`, `performance`, `documentation` and `needs reproduction`.
-
-## Conduct and licensing
-
-Keep feedback specific and respectful. Do not post credentials, private records, harassment or discriminatory content. Maintainers may remove harmful content or close abusive discussions. Report sensitive issues privately through [SECURITY.md](SECURITY.md).
-
-Contributions to original source are [MIT licensed](LICENSE). Review [NOTICE.md](NOTICE.md) before redistributing third-party assets and attribute DeepSeek branding and upstream material to their source.
+Maintainers handle dependency releases, repository settings and publication. Before a release, run the complete verification pipeline and record remaining limitations. Both Next.js server and GitHub Pages delivery are supported.

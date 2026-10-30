@@ -48,7 +48,7 @@ Esto mantiene intacto el servidor de desarrollo. Pages sirve documentos directam
 
 ## Configuración de herramientas
 
-`AGENTS.md` concentra instrucciones compartidas. Cursor lo referencia; Claude importa ese archivo; Codex usa su descubrimiento normal y configuración local mínima. Las preferencias privadas, tokens, MCP y estado de ejecución quedan fuera de Git. Oxlint y Oxfmt son las herramientas de lint y formato.
+La configuración compartida define las tareas, el formato y la depuración del proyecto. Las preferencias privadas, credenciales y el estado de ejecución quedan fuera de Git. Oxlint y Oxfmt son las herramientas de lint y formato.
 
 ## Límites de renderizado y despliegue
 

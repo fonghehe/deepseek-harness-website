@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 const port = process.env.E2E_PORT || '3101';
 const pages = process.env.E2E_PAGES === '1';
-const crossBrowser = '**/cross-browser.spec.ts';
+const crossBrowser = ['**/cross-browser.spec.ts', '**/scroll-entrances.spec.ts'];
 export default defineConfig({
   testDir: './tests',
   testMatch: pages ? '**/pages.spec.ts' : '**/*.spec.ts',

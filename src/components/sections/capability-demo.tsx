@@ -36,7 +36,7 @@ export function CapabilityDemo({
       ref={setElement}
       data-entrance="initial"
       data-reveal="card"
-      style={{ transitionDelay: `${order * 0.1}s` }}
+      data-entrance-delay={order * 0.1}
     >
       {heading}
       <div

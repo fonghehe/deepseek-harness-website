@@ -4,13 +4,13 @@ English · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
 An independent recreation of the **DeepSeek Harness** website, with desktop and mobile layouts, animated demos and 26 languages.
 
-The page shows a desktop workspace and four demos: plugins, file previews, scheduled tasks and execution traces. Arabic, Hebrew, Persian and Urdu use right-to-left layouts. The accompanying documentation explains how the website is built and tested.
+The page shows a desktop workspace and four demos: plugins, file previews, scheduled tasks and execution traces. The accompanying documentation explains how the website is built and tested.
 
 ![Desktop website preview](public/images/showcase-desktop.png)
 
 - **Animated demonstrations** with pause controls and support for reduced motion.
 - **Controls** for language selection, downloads and command copying.
-- **26 language versions**: English, Simplified and Traditional Chinese, Japanese, French, German, Korean, Russian, Arabic, Spanish, Portuguese, Indonesian, Turkish, Polish, Italian, Ukrainian, Vietnamese, Dutch, Czech, Romanian, Hebrew, Persian, Thai, Hindi, Bengali and Urdu.
+- **26 languages**, with right-to-left layouts for Arabic, Hebrew, Persian and Urdu.
 - **Documentation** with architecture notes, implementation examples, review checklists and exercises.
 
 <img src="public/images/showcase-mobile.png" alt="Mobile website preview" width="250">

@@ -35,14 +35,14 @@ The matrix is a starting point. Manual inspection should include line wrapping, 
 | `.next/`                                                            | No      | Next.js output regenerated locally                         |
 | `public/docs/`                                                      | No      | VitePress output regenerated before the website build      |
 | `docs/.vitepress/cache/`, reports, `node_modules/`                  | No      | Caches, observations and installed dependencies            |
-| `.env.example`, shared editor/agent files                           | Yes     | Portable workflow and documented settings                  |
+| `.env.example`, shared editor files                                 | Yes     | Portable workflow and documented settings                  |
 | `.env.local`, personal overrides and credentials                    | No      | Machine-specific or private values                         |
 
 `public/harness-source` and captured HTML templates have been removed. Website JavaScript and CSS are generated from maintained components and styles during `pnpm build`. Only static brand, font, icon and Chinese QR inputs remain versioned. Content-hashed framework output belongs to the build, not to a manually vendored runtime directory.
 
 ## Keep configuration portable
 
-Use the package manager and Node version declared by the repository. Commit the lockfile and shared tasks. Keep editor settings focused on the project and exclude personal MCP configuration, credentials and runtime history. `AGENTS.md` is the canonical instruction file; `AGENT.md` is a compatibility entry, not an assumption about automatic tool discovery. Ignore files help Git and indexing, but do not grant or revoke terminal permissions.
+Use the package manager and Node version declared by the repository. Commit the lockfile and shared tasks. Keep editor settings focused on the project and exclude personal configuration, credentials and runtime history. Ignore files help Git and indexing, but do not grant or revoke terminal permissions.
 
 ## Validate a content change
 

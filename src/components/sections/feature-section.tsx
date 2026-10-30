@@ -22,7 +22,7 @@ export function FeatureSection({ locale }: { locale: Locale }) {
             key={feature.id}
             data-entrance="initial"
             data-reveal="card"
-            style={{ transitionDelay: `${(index % 3) * 0.1}s` }}
+            data-entrance-delay={(index % 3) * 0.1}
           >
             <summary>
               <span className="site-feature-number" aria-hidden="true">
